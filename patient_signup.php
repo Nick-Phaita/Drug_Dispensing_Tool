@@ -33,11 +33,12 @@ $sql = "INSERT INTO Patients (SSN,Names,Gender,Allergies,HeightinCm,WeightinKg,P
 VALUES ('$SSN','$Names','$Gender','$Allergies','$HeightinCm','$WeightinKg','$PatientAddress','$DateOfBirth','$UserPassword')";
 
 if($conn->query($sql) === TRUE) {
-    echo "New record inserted successfully";
+    echo 
+    "<script>alert('Data inserted successfully')</script>";
 }else {
     echo "Error: ".$sql."<br>".$conn->error;
 }
 
 $conn->close();
-
+/*/project-drug-dispenser/Drug_Dispensing_Tool-for chege configuration*/
 ?>
