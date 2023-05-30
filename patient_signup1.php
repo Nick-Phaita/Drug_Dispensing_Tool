@@ -1,3 +1,32 @@
+<?php
+require_once("connection.php");
+
+try{
+if($_SERVER["REQUEST_METHOD"]== "POST"){
+$SSN = $_POST["SSN"];
+$Names = $_POST["Names"];
+$Gender = $_POST["Gender"];
+$Allergies = $_POST["Allergies"];
+$HeightinCm = $_POST["HeightinCm"];
+$WeightinKg = $_POST["WeightinKg"];
+$PatientAddress = $_POST["PatientAddress"];
+$DateOfBirth = $_POST["DateOfBirth"];
+$UserPassword = $_POST["UserPassword"];
+
+$sql = "INSERT INTO Patients (SSN,Names,Gender,Allergies,HeightinCm,WeightinKg,PatientAddress,DateOfBirth,UserPassword)
+VALUES ('$SSN','$Names','$Gender','$Allergies','$HeightinCm','$WeightinKg','$PatientAddress','$DateOfBirth','$UserPassword')";
+
+if($conn->query($sql) === TRUE) {
+    echo 
+    "<script>alert('Data inserted successfully')</script>";
+}else {
+    echo "Error: ".$sql."<br>".$conn->error;
+}}
+}catch(Exception){
+    echo "<script>alert('Illegal input')</script>";
+}
+
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,7 +35,7 @@
     </head>
     <body>
         <h2>Patient form</h2>
-        <form method="post" action="/patient_signup.php">
+        <form method="post" action="">
             <label for="SSN">Social Security Number:</label><br>
             <input type="text" id="SSN" name="SSN" required placeholder="Enter your SSN"><br>
             <label for="Names">Name: </label><br>
