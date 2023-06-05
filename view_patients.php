@@ -17,9 +17,21 @@ if($result->num_rows > 0){
     /*foreach($row as $key=>$value){
         echo $key . " is " . $value . "<br>";
     }*/
-    while($row = $result->fetch_assoc()){
-        echo "SSN: ". $row['SSN'] . " Name: ". $row['Names'] . " Gender: ". $row['Gender'] . "<br>"; //to add remaining values
+    echo "<table style='border:1px solid black'>";
+    $attributes = $result->fetch_fields();
+    echo "<tr style='border:1px solid black'>";
+    foreach($attributes as $field){
+        echo "<th style='border:1px solid black'>". $field->name . "</th>";
     }
+    echo "</tr>";
+    while($row = $result->fetch_assoc()){
+        echo "<tr>";
+        foreach($row as $data){
+            echo "<td style='border:1px solid black'>". $data . "</td>" ; 
+        }
+        echo "<tr>";
+    }
+    echo "</table>";
 } else {
     echo "0 results";
 }
