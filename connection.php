@@ -37,6 +37,20 @@ if($conn->query($sql) === TRUE){
     echo "Error creating table: " .$conn->error;
 }*/
 
+/*$sql= "CREATE TABLE Doctors(
+    SSN INT(9) UNSIGNED PRIMARY KEY,
+    Names VARCHAR (50) NOT NULL,
+    Speciality VARCHAR (100),
+    Years of experience INT (5),
+    Doctorpassword VARCHAR (50) NOT NULL
+
+)";
+
+if($conn->query($sql) === TRUE){
+    echo "Table created successfully";
+}else {
+    echo "Error creating table: " .$conn->error;
+}*/
 
 
 ?>
