@@ -32,7 +32,7 @@ if($conn->query($sql) === TRUE){
 )";
 
 if($conn->query($sql) === TRUE){
-    echo "Table created successfully";
+    echo "Patients Table created successfully";
 }else {
     echo "Error creating table: " .$conn->error;
 }*/
@@ -41,13 +41,26 @@ if($conn->query($sql) === TRUE){
     SSN INT(9) UNSIGNED PRIMARY KEY,
     Names VARCHAR (50) NOT NULL,
     Speciality VARCHAR (100),
-    Years of experience INT (5),
-    Doctorpassword VARCHAR (50) NOT NULL
+    Years_of_experience INT (5),
+    Doctorpassword VARCHAR (50)
 
 )";
 
 if($conn->query($sql) === TRUE){
-    echo "Table created successfully";
+    echo "Doctors Table created successfully";
+}else {
+    echo "Error creating table: " .$conn->error;
+}*/
+
+/*$sql="CREATE TABLE Pharmacist(
+    SSN INT(9) UNSIGNED PRIMARY KEY,
+    Names VARCHAR (50) NOT NULL,
+    Pharmacy_name VARCHAR (23),
+    Pharmacistpassword VARCHAR (50)
+)";
+
+if($conn->query($sql) === TRUE){
+    echo "Pharmacist Table created successfully";
 }else {
     echo "Error creating table: " .$conn->error;
 }*/

@@ -7,11 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="" method="post">
+    <h1>Doctors sign-up</h1>
+    <form action="/project-drug-dispenser/Drug_Dispensing_Tool/doctor_signup.php" method="post">
         <label for="SSN">Social Security Number:</label>
         <input type="text" id="SSN" name="SSN" required placeholder="Enter your SSN"><br><br>
-        <label for="name">Name</label>
-        <input type="text" name="nname" id="name" required placeholder="Enter your name"><br>
+        <label for="nname">Name</label>
+        <input type="text" name="nname" id="nname" required placeholder="Enter your name"><br><br>
         <label for="speciality">speciality</label>
         <select name="spec" id="speciality" required>
             <option value="" selected hidden>Pick the speciality</option>
@@ -21,8 +22,8 @@
             <option value="psycologist">psycologist</option>
         </select><br><br>
         <label for="yoe">Years of experience</label>
-        <input type="number" id="yoe" name="years" required placeholder="Enter years"><br>
-        <label for="UserPassword">Password: </label><br>
+        <input type="number" id="yoe" name="years" required placeholder="Enter years"><br><br>
+        <label for="UserPassword">Password: </label>
         <input type="password" name="docpassword" id="UserPassword" required placeholder="Enter your password"><br><br>
         <input type="submit" value="submit">
     </form>
