@@ -1,7 +1,7 @@
 <?php 
 session_start();
 
-if (isset($_SESSION['Names'])) {
+if (isset( $_SESSION['loggedin'])) {
 
  ?>
 <!DOCTYPE html>
@@ -11,7 +11,7 @@ if (isset($_SESSION['Names'])) {
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-     <h1>Hello, <?php echo $_SESSION['Names']; ?></h1>
+     <h1 style="text-align: right;">Hello, <?php echo $_SESSION['Names']; ?></h1>
 </body>
 </html>
 

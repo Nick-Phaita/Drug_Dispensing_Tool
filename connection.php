@@ -65,5 +65,19 @@ if($conn->query($sql) === TRUE){
     echo "Error creating table: " .$conn->error;
 }*/
 
+/*$sql="CREATE TABLE Pharmacy (
+    Names VARCHAR (100) NOT NULL,
+    Addresss VARCHAR (100),
+    Phone_no INT (10)
+)";
+
+if($conn->query($sql) === TRUE){
+    echo "Pharmacy Table created successfully";
+}else {
+    echo "Error creating table: " .$conn->error;
+}*/
+
+
+
 
 ?>
