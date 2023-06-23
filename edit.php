@@ -6,7 +6,7 @@ require_once("connection.php");
  $years="";
  $password="";
 
- if($_SERVER['REQUEST METHOD'] == 'GET'){
+ if($_SERVER['REQUEST_METHOD'] == 'GET'){
 
     if(!isset($_GET["SSN"])){
         header("Location: view_doctors.php ");
@@ -30,7 +30,7 @@ require_once("connection.php");
  $password=$row["Doctorpassword"];
 
 
- }else{
+ }elseif(isset($_POST['SSN'])){
      
     $SSN=$_POST["SSN"];
     $name=$_POST["nname"];
@@ -38,20 +38,22 @@ require_once("connection.php");
     $years=$_POST["years"];
     $password=$_POST["docpassword"];
 
-    do{
+    
         if(empty($SSN) || empty($name) || empty($speciality)){
             echo "All fields are required ";
-            break;
-
+            
         }
 
         $sql="UPDATE doctors SET SSN='$SSN',Names='$name',Speciality='$speciality',`Years_of_experience`='$years',`Doctorpassword`='$password' WHERE SSN=$SSN";
 
         $result = mysqli_query($conn, $sql);
-    }while(true);
+
+        header("Location: view_doctors.php");
 
     
- }
+
+    
+    } 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -62,8 +64,8 @@ require_once("connection.php");
     <title>Document</title>
 </head>
 <body>
-    <h1>Doctors sign-up</h1>
-    <form action="/project-drug-dispenser/Drug_Dispensing_Tool/doctor_signup.php" method="post">
+    <h1>Edit doctor</h1>
+    <form action="" method="post">
         <label for="SSN">Social Security Number:</label>
         <input type="text" id="SSN" name="SSN" required placeholder="Enter your SSN" value="<?php echo $SSN?>"><br><br>
         <label for="nname">Name</label>

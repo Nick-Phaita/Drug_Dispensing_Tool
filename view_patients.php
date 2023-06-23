@@ -17,7 +17,7 @@ if($result->num_rows > 0){
     /*foreach($row as $key=>$value){
         echo $key . " is " . $value . "<br>";
     }*/
-    echo "<table style='border:1px solid black'>";
+    echo "<table style='border:1px solid black' id='patientstable'> ";
     $attributes = $result->fetch_fields();
     echo "<tr style='border:1px solid black'>";
     foreach($attributes as $field){
@@ -35,6 +35,7 @@ if($result->num_rows > 0){
 } else {
     echo "0 results";
 }
+echo "<script type='text/javascript' src='pagination.js'></script>";
 
 $conn->close();
 

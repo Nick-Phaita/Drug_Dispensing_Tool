@@ -32,8 +32,8 @@
             <td>$row[Speciality]</td>
             <td>$row[Years_of_experience]</td>
             <td>$row[Doctorpassword]</td>
-            <td><a href='/project-drug-dispenser/Drug_Dispensing_Tool/edit.php?SSN=$row[SSN]'>Edit</a></td>
-            <td><a href='/project-drug-dispenser/Drug_Dispensing_Tool/delete.php?SSN=$row[SSN]'>Delete</a></td></tr>";
+            <td><a href='edit.php?SSN=$row[SSN]'>Edit</a></td>
+            <td><a href='delete.php?SSN=$row[SSN]'>Delete</a></td></tr>";
 
                 }
             }
