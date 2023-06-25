@@ -1,5 +1,5 @@
 <?php
-require_once("connection.php");
+require_once("../connection.php");
 
 try{
     if($_SERVER["REQUEST_METHOD"]== "POST"){
@@ -15,6 +15,9 @@ try{
 if($conn->query($sql) === TRUE) {
     echo 
     "<script>alert('Data inserted successfully')</script>";
+    
+    header(("Location: /adminpage.php"));
+
 }else {
     echo "Error: ".$sql."<br>".$conn->error;
 }}

@@ -1,5 +1,5 @@
 <?php
-require_once("connection.php");
+require_once("..\connection.php");
  $SSN="";
  $name="";
  $speciality="";
@@ -48,7 +48,7 @@ require_once("connection.php");
 
         $result = mysqli_query($conn, $sql);
 
-        header("Location: view_doctors.php");
+        header('Location: /adminpage.php');
 
     
 
@@ -72,7 +72,7 @@ require_once("connection.php");
         <input type="text" name="nname" id="nname" required placeholder="Enter your name" value="<?php echo $name?>"><br><br>
         <label for="speciality">speciality</label>
         <select name="spec" id="speciality" required value="<?php echo $speciality?>">
-            <option value="" selected hidden>Pick the speciality</option>
+            <option value="<?php echo $speciality?>" selected hidden><?php echo $speciality?></option>
             <option value="dentist">dentist</option>
             <option value="opthalmologist">opthalmologist</option>
             <option value="gaenacologist">gaenacologist</option>

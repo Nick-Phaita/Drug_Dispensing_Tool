@@ -28,15 +28,15 @@ echo "
 <td>$row[Speciality]</td>
 <td>$row[Years_of_experience]</td>
 <td>$row[Doctorpassword]</td>
-<td><a href='edit.php?SSN=$row[SSN]'>Edit</a></td>
-<td><a href='delete.php?SSN=$row[SSN]'>Delete</a></td></tr>";
+<td><a href='table_editing/edit_doctors.php?SSN=$row[SSN]'>Edit</a></td>
+<td><a href='table_editing/delete_doctors.php?SSN=$row[SSN]'>Delete</a></td></tr>";
 
     }
 }
 ?>
 </table>
 
-<a href="doctor_signup.html"><button>Register doctor</button></a>   
+<a href="/adminpage_clones/doctor_signup.html"><button>Register doctor</button></a>   
 
 <br><br><br><br>
 
@@ -66,14 +66,14 @@ echo "
             <td>$row[Pharmacy_name]</td>
             <td>$row[Pharmacistpassword]</td>
             <td><a href='edit.php?SSN=$row[SSN]'>Edit</a></td>
-            <td><a href='delete.php?SSN=$row[SSN]'>Delete</a></td></tr>";
+            <td><a href='table_editing/delete_pharmacists.php?SSN=$row[SSN]'>Delete</a></td></tr>";
 
                 }
             }
             ?>
         </table>
 
-        <a href="pharmacist_signup1.php"><button>Register pharmacist</button></a>
+        <a href="/adminpage_clones/pharmacist_signup1.php"><button>Register pharmacist</button></a>
         <br><br><br><br>
 
         <table>
@@ -111,14 +111,14 @@ echo "
             <td>$row[DateOfBirth]</td>
             <td>$row[UserPassword]</td>
             <td><a href='edit.php?SSN=$row[SSN]'>Edit</a></td>
-            <td><a href='delete.php?SSN=$row[SSN]'>Delete</a></td></tr>";
+            <td><a href='/table_editing/delete_patients.php?SSN=$row[SSN]'>Delete</a></td></tr>";
 
                 }
             }
             ?>
         </table>
 
-        <a href="patient_signup.html"><button>Register patient</button></a>
+        <a href="/adminpage_clones/patient_signup.html"><button>Register patient</button></a>
 
         <br><br><br><br>
 
@@ -149,12 +149,12 @@ echo "
             <td>$row[Addresss]</td>
             <td>$row[Phone_no]</td>
             <td><a href='edit.php?CompanyID=$row[CompanyID]'>Edit</a></td>
-            <td><a href='delete.php?CompanyID=$row[CompanyID]'>Delete</a></td></tr>";
+            <td><a href='table_editing/delete_pharmacy.php?CompanyID=$row[CompanyID]'>Delete</a></td></tr>";
 
                 }
             }
             ?>
         </table>
 
-        <a href="pharmacy_register.html"><button>Register pharmacy</button></a>
+        <a href="/registration_and_signup/pharmacy_register.html"><button>Register pharmacy</button></a>
 
