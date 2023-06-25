@@ -44,8 +44,6 @@ if(isset($_POST["submit"])){
     }else{
 
         $_SESSION['else']="Incorrect SSN or password";
-        echo 
-        "<script>alert('Incorrect SSN or password')</script>";
 
         header("Location: login_doctor1.php");
     }
