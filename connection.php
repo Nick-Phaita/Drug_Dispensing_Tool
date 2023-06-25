@@ -77,7 +77,16 @@ if($conn->query($sql) === TRUE){
     echo "Error creating table: " .$conn->error;
 }*/
 
+/*$sql="CREATE TABLE admin_drug (
+    Names VARCHAR (100) NOT NULL,
+    Apassword VARCHAR (100)
+)";
 
+if($conn->query($sql) === TRUE){
+    echo "Admin Table created successfully";
+}else {
+    echo "Error creating table: " .$conn->error;
+}*/
 
 
 ?>
