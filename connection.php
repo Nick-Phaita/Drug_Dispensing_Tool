@@ -66,7 +66,8 @@ if($conn->query($sql) === TRUE){
 }*/
 
 /*$sql="CREATE TABLE Pharmacy (
-    Names VARCHAR (100) NOT NULL,
+    CompanyID INT (100) UNSIGNED PRIMARY KEY,
+    Pharname VARCHAR (100) NOT NULL,
     Addresss VARCHAR (100),
     Phone_no INT (10)
 )";
