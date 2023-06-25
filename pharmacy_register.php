@@ -3,13 +3,14 @@ require_once("connection.php");
 
 try{
     if($_SERVER["REQUEST_METHOD"]== "POST"){
-        $name=$_POST["pharname"];
+        $ID=$_POST["pharname"];
+        $name=$_POST["prname"];
         $address=$_POST["Address"];
         $phone_no=$_POST["phoneno"];
         
 
-       $sql="INSERT INTO Pharmacy (Names,Addresss,Phone_no) 
-       VALUES ('$name','$address','$phone_no')";
+       $sql="INSERT INTO Pharmacy (CompanyID, Pharname,Addresss,Phone_no) 
+       VALUES ('$ID','$name','$address','$phone_no')";
 
 if($conn->query($sql) === TRUE) {
     echo 

@@ -12,8 +12,27 @@
         <input type="number" name="pSSN" id="pSSN" placeholder="Enter your SSN" required><br><br>
         <label for="">Name</label>
         <input type="text" name="phname" id="phname" placeholder="Enter your name" required><br><br>
-        <label for="">Pharmacy name</label>
-        <input type="text" name="pname" id="pname" placeholder="Enter yout pharmacy name" required><br><br>
+        <label for="pname">Pharmacy name</label>
+        <select name="pname" id="pname">
+            <option value="" selected hidden>Pick the speciality</option>
+            <?php
+            require_once("connection.php");
+
+            $sql="SELECT * FROM pharmacy";
+            
+            $result=$conn->query($sql);
+
+            if($result=$conn->query($sql)){
+
+                while($row = $result->fetch_assoc()){
+
+                
+            
+            echo "
+            <option value='$row[Pharname]'>$row[Pharname]</option>
+            ";}}
+            ?>
+        </select><br><br>
         <label for="">Password</label>
         <input type="password" name="ppassword" id="ppassword" placeholder="******" required><br><br>
         <input type="submit" name="submit" id="">
