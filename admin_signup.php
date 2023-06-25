@@ -6,7 +6,7 @@ try{
         $SSN=$_POST["aSSN"];
         $Apass=$_POST["apass"];
 
-        $sql="INSERT INTO admin_drug(Names , Apassword) VALUES ('$SSN','$Apass')";
+        $sql="INSERT INTO admin_drug( SSN , Apassword) VALUES ('$SSN','$Apass')";
 
         if($conn->query($sql) === TRUE) {
             echo 
@@ -18,6 +18,6 @@ try{
 
     }
 }catch(Exception){
-    header("Location: admin_signup.html");
+header("Location: admin_signup.html");
 }
 ?>

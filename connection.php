@@ -78,7 +78,7 @@ if($conn->query($sql) === TRUE){
 }*/
 
 /*$sql="CREATE TABLE admin_drug (
-    Names VARCHAR (100) NOT NULL,
+    SSN INT (10) UNSIGNED PRIMARY KEY ,
     Apassword VARCHAR (100)
 )";
 
