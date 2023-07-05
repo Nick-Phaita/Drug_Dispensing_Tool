@@ -65,7 +65,7 @@ echo "
             <td>$row[Names]</td>
             <td>$row[Pharmacy_name]</td>
             <td>$row[Pharmacistpassword]</td>
-            <td><a href='edit.php?SSN=$row[SSN]'>Edit</a></td>
+            <td><a href='table_editing/edit.php?SSN=$row[SSN]'>Edit</a></td>
             <td><a href='table_editing/delete_pharmacists.php?SSN=$row[SSN]'>Delete</a></td></tr>";
 
                 }
@@ -110,7 +110,7 @@ echo "
             <td>$row[PatientAddress]</td>
             <td>$row[DateOfBirth]</td>
             <td>$row[UserPassword]</td>
-            <td><a href='edit.php?SSN=$row[SSN]'>Edit</a></td>
+            <td><a href='table_editing/edit_patients.php?SSN=$row[SSN]'>Edit</a></td>
             <td><a href='/table_editing/delete_patients.php?SSN=$row[SSN]'>Delete</a></td></tr>";
 
                 }
@@ -148,7 +148,7 @@ echo "
             <td>$row[Pharname]</td>
             <td>$row[Addresss]</td>
             <td>$row[Phone_no]</td>
-            <td><a href='edit.php?CompanyID=$row[CompanyID]'>Edit</a></td>
+            <td><a href='table_editing/edit_pharmacy.php?CompanyID=$row[CompanyID]'>Edit</a></td>
             <td><a href='table_editing/delete_pharmacy.php?CompanyID=$row[CompanyID]'>Delete</a></td></tr>";
 
                 }
