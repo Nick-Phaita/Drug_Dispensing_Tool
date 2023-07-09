@@ -1,7 +1,14 @@
 <?php 
+require_once("../connection.php");
 session_start();
 
 if (isset( $_SESSION['loggedin'])) {
+    $sql = "SELECT * FROM PharmaCo WHERE Username ='$_SESSION[Username]'";
+    $result = mysqli_query($conn, $sql);
+    if (mysqli_num_rows($result) === 1) {
+        $row = mysqli_fetch_assoc($result);
+    }
+    $_SESSION['CompanyID'] = $row['CompanyID'];
 
  ?>
 <!DOCTYPE html>
@@ -13,12 +20,14 @@ if (isset( $_SESSION['loggedin'])) {
 <body>
      <h1 style="text-align: right;">Hello, <?php echo $_SESSION['Names']; ?></h1>
      <p style="text-align: left;"><a href="../signout.php">Sign Out</a></p>
+     <p><a href="../add/add_contract.php">Sign Contract</a></p>
+     <p><a href="../add/add_drug.php">Add Drug</a></p>
 </body>
 </html>
 
 <?php 
 }else{
-    header("Location: login.html");
+    header("Location: /App/login.html");
     exit();
 }
 ?>

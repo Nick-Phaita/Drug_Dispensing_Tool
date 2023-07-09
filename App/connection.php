@@ -2,6 +2,7 @@
 
 <?php 
 //make phone numbers unique
+//primary physician in patients table
 
 $servername = "localhost";
 $username = "root";
@@ -163,17 +164,132 @@ if($conn->query($sql) === TRUE){
     echo "Error creating table: " .$conn->error;
 }*/
 
-
-/*$sql="CREATE TABLE admin_drug (
-    SSN INT (10) UNSIGNED PRIMARY KEY ,
-    Apassword VARCHAR (100)
+/*$sql="CREATE TABLE Contracts(
+    ContractID VARCHAR(10) PRIMARY KEY,
+    ContractText VARCHAR(100) NOT NULL,
+    StartDate date NOT NULL,
+    EndDate date NOT NULL, 
+    CompanyID VARCHAR (10) NOT NULL,
+    PharmacyID VARCHAR (10) NOT NULL,
+    SupervisorSSN INT(9) UNSIGNED NOT NULL
+    
 )";
 
 if($conn->query($sql) === TRUE){
-    echo "Admin Table created successfully";
+    echo "Contracts Table created successfully";
 }else {
     echo "Error creating table: " .$conn->error;
 }*/
 
+/*$sql = "ALTER TABLE Contracts
+    ADD (FOREIGN KEY (CompanyID) REFERENCES PharmaCo (CompanyID),
+    FOREIGN KEY (PharmacyID) REFERENCES Pharmacy (PharmacyID),
+    FOREIGN KEY (SupervisorSSN) REFERENCES Supervisor (SSN))";
+
+if($conn->query($sql) === TRUE){
+    echo "CompanyID, PharmacyID and SupervisorSSN are now foreign keys";
+}else {
+    echo "Error: " .$conn->error;
+};*/
+
+
+/*$sql="CREATE TABLE Drugs (
+    TradeName VARCHAR (30) PRIMARY KEY ,
+    Formula VARCHAR (30) NOT NULL,
+    CompanyID VARCHAR (10) NOT NULL
+)";
+
+if($conn->query($sql) === TRUE){
+    echo "Drugs Table created successfully";
+}else {
+    echo "Error creating table: " .$conn->error;
+}*/
+
+/*$sql = "ALTER TABLE Drugs 
+    ADD (FOREIGN KEY (CompanyID) REFERENCES PharmaCo (CompanyID))";
+
+if($conn->query($sql) === TRUE){
+    echo "CompanyID is now a foreign key";
+}else {
+    echo "Error: " .$conn->error;
+};*/
+
+/*$sql="CREATE TABLE Inventory (
+    PharmacyID VARCHAR (10),
+    TradeName VARCHAR (30),
+    Price VARCHAR(15) NOT NULL,
+    ExpirationDate date NOT NULL,
+    Stock INT(10) NOT NULL,
+    PRIMARY KEY (PharmacyID, TradeName)
+    
+)";
+
+if($conn->query($sql) === TRUE){
+    echo "Inventory Table created successfully";
+}else {
+    echo "Error creating table: " .$conn->error;
+};*/
+
+/*$sql = "ALTER TABLE Inventory 
+    ADD (FOREIGN KEY (PharmacyID) REFERENCES Pharmacy (PharmacyID),
+    FOREIGN KEY (TradeName) REFERENCES Drugs (TradeName))";
+
+if($conn->query($sql) === TRUE){
+    echo "PharmacyID and TradeName are now foreign keys";
+}else {
+    echo "Error: " .$conn->error;
+};*/
+
+/*$sql="CREATE TABLE Prescriptions (
+    PrescriptionID VARCHAR (10) PRIMARY KEY,
+    TradeName VARCHAR (30) NOT NULL,
+    Quantity VARCHAR (20) NOT NULL,
+    DoctorSSN INT (9) UNSIGNED NOT NULL,
+    PatientSSN INT (9) UNSIGNED NOT NULL,
+    Instructions VARCHAR(100) NOT NULL,
+    PrescriptionDate date NOT NULL
+    
+)";
+
+if($conn->query($sql) === TRUE){
+    echo "Prescriptions Table created successfully";
+}else {
+    echo "Error creating table: " .$conn->error;
+};*/
+
+/*$sql = "ALTER TABLE Prescriptions 
+    ADD (FOREIGN KEY (TradeName) REFERENCES Drugs (TradeName),
+    FOREIGN KEY (DoctorSSN) REFERENCES Doctors (SSN),
+    FOREIGN KEY (PatientSSN) REFERENCES Patients (SSN))";
+
+if($conn->query($sql) === TRUE){
+    echo "TradeName, DoctorSSN and PatientSSN are now foreign keys";
+}else {
+    echo "Error: " .$conn->error;
+};*/
+
+/*$sql="CREATE TABLE Dispensations (
+    DispensationID VARCHAR (10) PRIMARY KEY,
+    PrescriptionID VARCHAR (10) NOT NULL,
+    PharmacistSSN INT (9) UNSIGNED NOT NULL,
+    DispensationDate date NOT NULL
+    
+)";
+
+if($conn->query($sql) === TRUE){
+    echo "Dispensations Table created successfully";
+}else {
+    echo "Error creating table: " .$conn->error;
+};*/
+
+/*$sql = "ALTER TABLE Dispensations 
+    ADD (FOREIGN KEY (PrescriptionID) REFERENCES Prescriptions (PrescriptionID),
+    FOREIGN KEY (PharmacistSSN) REFERENCES Pharmacist (SSN))";
+
+if($conn->query($sql) === TRUE){
+    echo "PrescriptionID and PharmacistSSN are now foreign keys";
+}else {
+    echo "Error: " .$conn->error;
+};*/
 
 ?>

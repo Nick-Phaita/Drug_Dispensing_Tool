@@ -62,6 +62,7 @@ if(isset($_POST["submit"])){
                 $row = mysqli_fetch_assoc($result);
                 $_SESSION['Names'] = $row['Names'];
                 $_SESSION['SSN'] = $row['SSN'];
+                $_SESSION['Username'] = $row['Username'];
                 header("Location: dashboards/supervisor_dashboard.php");
             }
             if($usertype == "pharmaceuticalcompany"){
@@ -69,7 +70,7 @@ if(isset($_POST["submit"])){
                 $result = mysqli_query($conn, $sql);
                 $row = mysqli_fetch_assoc($result);
                 $_SESSION['Names'] = $row['CompanyName'];
-                //$_SESSION['SSN'] = $row['SSN'];
+                $_SESSION['Username'] = $row['Username'];
                 header("Location: dashboards/pharmaco_dashboard.php");
             }
 

@@ -40,7 +40,7 @@ if($conn->query($sql) === TRUE) {
     echo 
     "<script>alert('Data inserted successfully')</script>";
     
-    header(("Location: ../dashboards/admin_dashboard.php"));
+    header("Location: ../dashboards/admin_dashboard.php");
 
 }else {
     echo "Error: ".$sql."<br>".$conn->error;

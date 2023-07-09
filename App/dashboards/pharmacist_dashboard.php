@@ -13,12 +13,13 @@ if (isset( $_SESSION['loggedin'])) {
 <body>
      <h1 style="text-align: right;">Hello, <?php echo $_SESSION['Names']; ?></h1>
      <p style="text-align: left;"><a href="../signout.php">Sign Out</a></p>
+     <p><a href="../add/add_dispensation.php">Make dispensation</a></p>
 </body>
 </html>
 
 <?php 
 }else{
-    header("Location: login.html");
+    header("Location: /App/login.html");
     exit();
 }
 ?>
