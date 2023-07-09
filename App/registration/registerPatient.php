@@ -1,3 +1,6 @@
+<?php 
+require_once("../signup.php");
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -10,6 +13,8 @@
     <body>
         <h1>Patient sign-up</h1>
         <form method="post" action="register_patient.php">
+            <label for="Username">Username: </label><br>
+            <input type="text" name="Username" id="Username" required value="<?php echo $_SESSION['Username']?>" readonly><br><br>
             <label for="SSN">Social Security Number:</label><br>
             <input type="text" id="SSN" name="SSN" required placeholder="Enter your SSN"><br>
             <label for="Names">Name: </label><br>
@@ -31,8 +36,6 @@
             <input type="text" name="PatientAddress" id="PatientAddress" required placeholder="Enter your address"><br>
             <label for="DateOfBirth">Date of birth: </label><br>
             <input type="date" name="DateOfBirth" id="DateOfBirth" required><br>
-            <label for="UserPassword">Password: </label><br>
-            <input type="password" name="UserPassword" id="UserPassword" required placeholder="*****"><br><br>
             <input type="submit" value="Submit">
         </form>
     </body> 

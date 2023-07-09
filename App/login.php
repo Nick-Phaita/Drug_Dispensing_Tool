@@ -1,6 +1,7 @@
 <?php 
 require_once("connection.php");
 session_start();
+//should clear all previous session data *to be done
 if(isset($_POST["submit"])){
 
     function validate($data){
@@ -29,8 +30,15 @@ if(isset($_POST["submit"])){
     if (mysqli_num_rows($result) === 1) {
         $row = mysqli_fetch_assoc($result);
         if ($row['Username'] === $username && $row['Password'] === $password) {
+            $usertype = $row['Usertype'];
             $_SESSION['loggedin']=true;
-            //$_SESSION['Names'] = $row['Names'];
+            if($usertype == "patient"){
+                $sql = "SELECT * FROM Patients WHERE Username='$username'";
+                $result = mysqli_query($conn, $sql);
+                $row = mysqli_fetch_assoc($result);
+                $_SESSION['Names'] = $row['Names'];
+                header("Location: dashboards/patient_dashboard.php");
+            }
 
             //header("Location: home.php");
             //exit();

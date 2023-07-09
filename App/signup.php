@@ -1,5 +1,6 @@
 <?php
 require_once("connection.php");
+session_start();
 try{
     if($_SERVER["REQUEST_METHOD"] == "POST"){
         $username = $_POST["username"];
@@ -8,23 +9,25 @@ try{
 
         $sql = "INSERT INTO Users (Username, Password, Usertype) 
         VALUES ('$username', '$password', '$usertype')";
-    }
-    if($conn->query($sql) === TRUE) {
-        echo 
-        "<script>alert('User $username created successfully')</script>";
-        if($usertype == "patient"){
-            header("Location: registration/register_patient.html");
-        }elseif($usertype == "doctor"){
+    
+        if($conn->query($sql) === TRUE) {
+            echo 
+            "<script>alert('User $username created successfully')</script>";
+            $_SESSION['Username'] = $username;
+            if($usertype == "patient"){
+            header("Location: registration/registerPatient.php");
+            }elseif($usertype == "doctor"){
             header("Location: registration/register_doctor.html");
-        }elseif($usertype == "pharmacist"){
+            }elseif($usertype == "pharmacist"){
             header("Location: registration/register_pharmacist.html");
-        }elseif($usertype == "supervisor"){
+            }elseif($usertype == "supervisor"){
             header("Location: registration/register_supervisor.html");
-        }elseif($usertype == "pharmaceuticalcompany"){
+            }elseif($usertype == "pharmaceuticalcompany"){
             header("Location: registration/register_pharmaco.html");
-        }
-    }else {
+            }
+        }else {
         echo "Error: ".$sql."<br>".$conn->error;
+        }
     }
 }catch(Exception){
 

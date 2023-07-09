@@ -40,7 +40,7 @@ if($conn->query($sql) === TRUE){
     WeightinKg INT(3),
     PatientAddress VARCHAR(50),
     DateOfBirth DATE NOT NULL,
-    UserPassword VARCHAR(30) NOT NULL
+    Username VARCHAR(30) NOT NULL
 )";
 
 if($conn->query($sql) === TRUE){
@@ -48,6 +48,15 @@ if($conn->query($sql) === TRUE){
 }else {
     echo "Error creating table: " .$conn->error;
 }*/
+
+/*$sql = "ALTER TABLE Patients 
+    ADD FOREIGN KEY (Username) REFERENCES Users (Username)";
+
+if($conn->query($sql) === TRUE){
+    echo "Username is now a foreign key";
+}else {
+    echo "Error: " .$conn->error;
+};*/
 
 /*$sql= "CREATE TABLE Doctors(
     SSN INT(9) UNSIGNED PRIMARY KEY,
