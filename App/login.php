@@ -56,22 +56,22 @@ if(isset($_POST["submit"])){
                 $_SESSION['SSN'] = $row['SSN'];
                 header("Location: dashboards/pharmacist_dashboard.php");
             }
-            /*if($usertype == "supervisor"){
+            if($usertype == "supervisor"){
                 $sql = "SELECT * FROM Supervisor WHERE Username='$username'";
                 $result = mysqli_query($conn, $sql);
                 $row = mysqli_fetch_assoc($result);
                 $_SESSION['Names'] = $row['Names'];
                 $_SESSION['SSN'] = $row['SSN'];
-                header("Location: dashboards/pharmacist_dashboard.php");
-            }*/
-            /*if($usertype == "pharmaceuticalcompany"){
-                $sql = "SELECT * FROM Pharmacist WHERE Username='$username'";
+                header("Location: dashboards/supervisor_dashboard.php");
+            }
+            if($usertype == "pharmaceuticalcompany"){
+                $sql = "SELECT * FROM PharmaCo WHERE Username='$username'";
                 $result = mysqli_query($conn, $sql);
                 $row = mysqli_fetch_assoc($result);
-                $_SESSION['Names'] = $row['Names'];
-                $_SESSION['SSN'] = $row['SSN'];
-                header("Location: dashboards/pharmacist_dashboard.php");
-            }*/
+                $_SESSION['Names'] = $row['CompanyName'];
+                //$_SESSION['SSN'] = $row['SSN'];
+                header("Location: dashboards/pharmaco_dashboard.php");
+            }
 
             //header("Location: home.php");
             //exit();

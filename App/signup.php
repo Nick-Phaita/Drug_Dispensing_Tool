@@ -21,9 +21,9 @@ try{
             }elseif($usertype == "pharmacist"){
             header("Location: registration/registerPharmacist.php");
             }elseif($usertype == "supervisor"){
-            header("Location: registration/register_supervisor.html");
+            header("Location: registration/registerSupervisor.php");
             }elseif($usertype == "pharmaceuticalcompany"){
-            header("Location: registration/register_pharmaco.html");
+            header("Location: registration/registerPharmaco.php");
             }
         }else {
         echo "Error: ".$sql."<br>".$conn->error;

@@ -124,6 +124,44 @@ if($conn->query($sql) === TRUE){
     echo "Error: " .$conn->error;
 };*/
 
+/*$sql="CREATE TABLE Supervisor(
+    SSN INT(9) UNSIGNED PRIMARY KEY,
+    Names VARCHAR (50) NOT NULL,
+    PharmacyID VARCHAR (10) NOT NULL,
+    Username VARCHAR (30) NOT NULL
+    
+)";
+
+if($conn->query($sql) === TRUE){
+    echo "Supervisor Table created successfully";
+}else {
+    echo "Error creating table: " .$conn->error;
+}*/
+
+/*$sql = "ALTER TABLE Supervisor
+    ADD (FOREIGN KEY (PharmacyID) REFERENCES Pharmacy (PharmacyID),
+    FOREIGN KEY (Username) REFERENCES Users (Username))";
+
+if($conn->query($sql) === TRUE){
+    echo "Username and PharmacyID are now foreign keys";
+}else {
+    echo "Error: " .$conn->error;
+};*/
+
+
+/*$sql="CREATE TABLE PharmaCo (
+    CompanyID VARCHAR (10) PRIMARY KEY,
+    CompanyName VARCHAR (30) NOT NULL,
+    PhoneNo VARCHAR (15),
+    Username VARCHAR (30) NOT NULL
+
+)";
+
+if($conn->query($sql) === TRUE){
+    echo "PharmaCo Table created successfully";
+}else {
+    echo "Error creating table: " .$conn->error;
+}*/
 
 
 /*$sql="CREATE TABLE admin_drug (
