@@ -17,9 +17,9 @@ try{
             if($usertype == "patient"){
             header("Location: registration/registerPatient.php");
             }elseif($usertype == "doctor"){
-            header("Location: registration/register_doctor.html");
+            header("Location: registration/registerDoctor.php");
             }elseif($usertype == "pharmacist"){
-            header("Location: registration/register_pharmacist.html");
+            header("Location: registration/registerPharmacist.php");
             }elseif($usertype == "supervisor"){
             header("Location: registration/register_supervisor.html");
             }elseif($usertype == "pharmaceuticalcompany"){

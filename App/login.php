@@ -37,8 +37,41 @@ if(isset($_POST["submit"])){
                 $result = mysqli_query($conn, $sql);
                 $row = mysqli_fetch_assoc($result);
                 $_SESSION['Names'] = $row['Names'];
+                $_SESSION['SSN'] = $row['SSN'];
                 header("Location: dashboards/patient_dashboard.php");
             }
+            if($usertype == "doctor"){
+                $sql = "SELECT * FROM Doctors WHERE Username='$username'";
+                $result = mysqli_query($conn, $sql);
+                $row = mysqli_fetch_assoc($result);
+                $_SESSION['Names'] = $row['Names'];
+                $_SESSION['SSN'] = $row['SSN'];
+                header("Location: dashboards/doctor_dashboard.php");
+            }
+            if($usertype == "pharmacist"){
+                $sql = "SELECT * FROM Pharmacist WHERE Username='$username'";
+                $result = mysqli_query($conn, $sql);
+                $row = mysqli_fetch_assoc($result);
+                $_SESSION['Names'] = $row['Names'];
+                $_SESSION['SSN'] = $row['SSN'];
+                header("Location: dashboards/pharmacist_dashboard.php");
+            }
+            /*if($usertype == "supervisor"){
+                $sql = "SELECT * FROM Supervisor WHERE Username='$username'";
+                $result = mysqli_query($conn, $sql);
+                $row = mysqli_fetch_assoc($result);
+                $_SESSION['Names'] = $row['Names'];
+                $_SESSION['SSN'] = $row['SSN'];
+                header("Location: dashboards/pharmacist_dashboard.php");
+            }*/
+            /*if($usertype == "pharmaceuticalcompany"){
+                $sql = "SELECT * FROM Pharmacist WHERE Username='$username'";
+                $result = mysqli_query($conn, $sql);
+                $row = mysqli_fetch_assoc($result);
+                $_SESSION['Names'] = $row['Names'];
+                $_SESSION['SSN'] = $row['SSN'];
+                header("Location: dashboards/pharmacist_dashboard.php");
+            }*/
 
             //header("Location: home.php");
             //exit();

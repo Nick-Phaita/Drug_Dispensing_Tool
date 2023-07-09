@@ -1,4 +1,8 @@
+
+
 <?php 
+//make phone numbers unique
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -61,9 +65,11 @@ if($conn->query($sql) === TRUE){
 /*$sql= "CREATE TABLE Doctors(
     SSN INT(9) UNSIGNED PRIMARY KEY,
     Names VARCHAR (50) NOT NULL,
-    Speciality VARCHAR (100),
-    Years_of_experience INT (5),
-    Doctorpassword VARCHAR (50)
+    Speciality VARCHAR (50) NOT NULL,
+    YearsOfExperience INT (2) NOT NULL,
+    MedicalLicenseNo VARCHAR (10) NOT NULL,
+    PhoneNo VARCHAR(15),
+    Username VARCHAR(30) NOT NULL
 
 )";
 
@@ -72,12 +78,34 @@ if($conn->query($sql) === TRUE){
 }else {
     echo "Error creating table: " .$conn->error;
 }*/
+/*$sql = "ALTER TABLE Doctors 
+    ADD FOREIGN KEY (Username) REFERENCES Users (Username)";
+
+if($conn->query($sql) === TRUE){
+    echo "Username is now a foreign key";
+}else {
+    echo "Error: " .$conn->error;
+};*/
+
+/*$sql="CREATE TABLE Pharmacy (
+    PharmacyID VARCHAR (10) PRIMARY KEY,
+    PharmacyName VARCHAR (30) NOT NULL,
+    PharmacyAddress VARCHAR (50),
+    PhoneNo VARCHAR (15)
+)";
+
+if($conn->query($sql) === TRUE){
+    echo "Pharmacy Table created successfully";
+}else {
+    echo "Error creating table: " .$conn->error;
+}*/
 
 /*$sql="CREATE TABLE Pharmacist(
     SSN INT(9) UNSIGNED PRIMARY KEY,
     Names VARCHAR (50) NOT NULL,
-    Pharmacy_name VARCHAR (23),
-    Pharmacistpassword VARCHAR (50)
+    PharmacyID VARCHAR (10) NOT NULL,
+    Username VARCHAR (30) NOT NULL
+    
 )";
 
 if($conn->query($sql) === TRUE){
@@ -86,18 +114,17 @@ if($conn->query($sql) === TRUE){
     echo "Error creating table: " .$conn->error;
 }*/
 
-/*$sql="CREATE TABLE Pharmacy (
-    CompanyID INT (100) UNSIGNED PRIMARY KEY,
-    Pharname VARCHAR (100) NOT NULL,
-    Addresss VARCHAR (100),
-    Phone_no INT (10)
-)";
+/*$sql = "ALTER TABLE Pharmacist 
+    ADD (FOREIGN KEY (PharmacyID) REFERENCES Pharmacy (PharmacyID),
+    FOREIGN KEY (Username) REFERENCES Users (Username))";
 
 if($conn->query($sql) === TRUE){
-    echo "Pharmacy Table created successfully";
+    echo "Username and PharmacyID are now foreign keys";
 }else {
-    echo "Error creating table: " .$conn->error;
-}*/
+    echo "Error: " .$conn->error;
+};*/
+
+
 
 /*$sql="CREATE TABLE admin_drug (
     SSN INT (10) UNSIGNED PRIMARY KEY ,

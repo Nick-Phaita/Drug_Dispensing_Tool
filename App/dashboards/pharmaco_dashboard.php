@@ -7,7 +7,7 @@ if (isset( $_SESSION['loggedin'])) {
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Patient Dashboard</title>
+	<title>Pharmaceutical Company Dashboard</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
