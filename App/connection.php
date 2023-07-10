@@ -321,4 +321,18 @@ ON DELETE CASCADE ON UPDATE CASCADE;*/
 /*ALTER TABLE `pharmaco` DROP FOREIGN KEY `pharmaco_ibfk_1`; ALTER TABLE `pharmaco` 
 ADD CONSTRAINT `pharmaco_ibfk_1` FOREIGN KEY (`Username`) REFERENCES `users`(`Username`) 
 ON DELETE CASCADE ON UPDATE CASCADE;*/
+
+/*ALTER TABLE `patients` ADD `PrimaryPhysicianSSN` INT(9) UNSIGNED NOT NULL AFTER `Username`;*/
+
+/*$sql = "ALTER TABLE Patients 
+    ADD FOREIGN KEY (PrimaryPhysicianSSN) REFERENCES Doctors (SSN)";
+
+if($conn->query($sql) === TRUE){
+    echo "PrimaryPhysicianSSN is now a foreign key";
+}else {
+    echo "Error: " .$conn->error;
+};*/
+
+/*ALTER TABLE `patients` ADD CONSTRAINT `patients_ibfk_2` FOREIGN KEY (`PrimaryPhysicianSSN`)
+ REFERENCES `doctors`(`SSN`) ON DELETE CASCADE ON UPDATE CASCADE;*/ 
 ?>

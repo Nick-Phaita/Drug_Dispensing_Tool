@@ -36,6 +36,8 @@ require_once("../signup.php");
             <input type="text" name="PatientAddress" id="PatientAddress" required placeholder="Enter your address"><br>
             <label for="DateOfBirth">Date of birth: </label><br>
             <input type="date" name="DateOfBirth" id="DateOfBirth" required><br>
+            <label for="PrimaryPhysicianSSN">Primary Physician SSN:</label><br>
+            <input type="text" id="PrimaryPhysicianSSN" name="PrimaryPhysicianSSN" required placeholder="Enter your physician's SSN"><br>
             <input type="submit" value="Submit">
         </form>
     </body> 

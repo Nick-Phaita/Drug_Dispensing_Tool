@@ -12,9 +12,10 @@ try{
     $PatientAddress = $_POST["PatientAddress"];
     $DateOfBirth = $_POST["DateOfBirth"];
     $Username = $_POST["Username"];
+    $PrimaryPhysicianSSN = $_POST['PrimaryPhysicianSSN'];
     
-    $sql = "INSERT INTO Patients (SSN,Names,Gender,Allergies,HeightinCm,WeightinKg,PatientAddress,DateOfBirth,Username)
-    VALUES ('$SSN','$Names','$Gender','$Allergies','$HeightinCm','$WeightinKg','$PatientAddress','$DateOfBirth','$Username')";
+    $sql = "INSERT INTO Patients (SSN,Names,Gender,Allergies,HeightinCm,WeightinKg,PatientAddress,DateOfBirth,Username, PrimaryPhysicianSSN)
+    VALUES ('$SSN','$Names','$Gender','$Allergies','$HeightinCm','$WeightinKg','$PatientAddress','$DateOfBirth','$Username', '$PrimaryPhysicianSSN')";
     
     if($conn->query($sql) === TRUE) {
         echo 
