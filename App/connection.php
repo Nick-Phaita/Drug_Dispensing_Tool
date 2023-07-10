@@ -335,4 +335,15 @@ if($conn->query($sql) === TRUE){
 
 /*ALTER TABLE `patients` ADD CONSTRAINT `patients_ibfk_2` FOREIGN KEY (`PrimaryPhysicianSSN`)
  REFERENCES `doctors`(`SSN`) ON DELETE CASCADE ON UPDATE CASCADE;*/ 
+
+ /*ALTER TABLE `prescriptions` DROP FOREIGN KEY `prescriptions_ibfk_1`;
+  ALTER TABLE `prescriptions` ADD CONSTRAINT `prescriptions_ibfk_1` FOREIGN KEY (`TradeName`) 
+  REFERENCES `drugs`(`TradeName`) ON DELETE CASCADE ON UPDATE CASCADE; 
+  ALTER TABLE `prescriptions` DROP FOREIGN KEY `prescriptions_ibfk_2`; 
+  ALTER TABLE `prescriptions` ADD CONSTRAINT `prescriptions_ibfk_2` FOREIGN KEY (`DoctorSSN`) 
+  REFERENCES `doctors`(`SSN`) ON DELETE CASCADE ON UPDATE CASCADE; 
+  ALTER TABLE `prescriptions` DROP FOREIGN KEY `prescriptions_ibfk_3`; 
+  ALTER TABLE `prescriptions` ADD CONSTRAINT `prescriptions_ibfk_3` FOREIGN KEY (`PatientSSN`) 
+  REFERENCES `patients`(`SSN`) ON DELETE CASCADE ON UPDATE CASCADE;
+ */
 ?>

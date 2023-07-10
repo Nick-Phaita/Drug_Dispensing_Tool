@@ -29,6 +29,7 @@ if(isset($_POST["submit"])){
 
     if (mysqli_num_rows($result) === 1) {
         $row = mysqli_fetch_assoc($result);
+        $_SESSION['Usertype'] = $row['Usertype'];
         if ($row['Username'] === $username && $row['Password'] === $password) {
             $usertype = $row['Usertype'];
             $_SESSION['loggedin']=true;
