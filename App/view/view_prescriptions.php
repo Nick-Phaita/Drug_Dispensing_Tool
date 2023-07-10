@@ -13,7 +13,7 @@ $sqlretrieve = "";
 if($_SESSION['Usertype'] == "patient"){
     $sqlretrieve = "SELECT * from Prescriptions WHERE PatientSSN='$SSN'";
 }
-if($_SESSION['Usertype'] == "doctor"){
+if($_SESSION['Usertype'] == "doctor" || $_SESSION['Usertype'] == "pharmacist"){
     $sqlretrieve = "SELECT * from Prescriptions";
 }
 

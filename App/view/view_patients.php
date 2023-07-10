@@ -8,6 +8,7 @@ $SSN = $_SESSION['SSN'];
 //code to be modified also depending on the user viewing -> if statement around sql code
 
 $sqlretrieve = "SELECT * FROM Patients";
+
 $result = $conn->query($sqlretrieve);
 
 if($result->num_rows > 0){

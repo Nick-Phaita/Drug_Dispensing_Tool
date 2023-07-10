@@ -15,7 +15,7 @@ require_once("../signup.php");
         <label for="Username">Username: </label><br>
         <input type="text" name="Username" id="Username" required value="<?php echo $_SESSION['Username']?>" readonly><br>
         <label for="">SSN:</label><br>
-        <input type="number" name="SSN" id="SSN" placeholder="Enter your SSN" required><br>
+        <input type="text" name="SSN" id="SSN" placeholder="Enter your SSN" required><br>
         <label for="">Name:</label><br>
         <input type="text" name="Names" id="Names" placeholder="Enter your name" required><br>
         <label for="PharmacyID">Pharmacy ID:</label><br>

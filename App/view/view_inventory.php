@@ -7,7 +7,20 @@ $SSN = $_SESSION['SSN'];
 //will modify the sql to give the intended fields
 //code to be modified also depending on the user viewing -> if statement around sql code
 
-$sqlretrieve = "SELECT TradeName, PharmacyName, PharmacyAddress, PhoneNo FROM (inventory NATURAL JOIN pharmacy);";
+$sqlretrieve = "";
+
+if($_SESSION['Usertype'] == "doctor"){
+    $sqlretrieve = "SELECT TradeName,Price, PharmacyName, PharmacyAddress, PhoneNo FROM (inventory NATURAL JOIN pharmacy);";
+}
+
+if($_SESSION['Usertype'] == "pharmacist"){
+    $sql = "SELECT * FROM Pharmacist WHERE SSN = '$SSN'";
+    $result = mysqli_query($conn, $sql);
+    $row=$result->fetch_assoc();
+    $PharmacyID = $row['PharmacyID'];
+    $sqlretrieve = "SELECT * FROM inventory WHERE PharmacyID='$PharmacyID';";
+}
+
 $result = $conn->query($sqlretrieve);
 
 if($result->num_rows > 0){
