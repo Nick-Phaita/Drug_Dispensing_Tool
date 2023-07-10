@@ -38,6 +38,7 @@ if(isset($_POST["submit"])){
                 $row = mysqli_fetch_assoc($result);
                 $_SESSION['Names'] = $row['Names'];
                 $_SESSION['SSN'] = $row['SSN'];
+                $_SESSION['Username'] = $row['Username'];
                 header("Location: dashboards/patient_dashboard.php");
             }
             if($usertype == "doctor"){
@@ -46,6 +47,7 @@ if(isset($_POST["submit"])){
                 $row = mysqli_fetch_assoc($result);
                 $_SESSION['Names'] = $row['Names'];
                 $_SESSION['SSN'] = $row['SSN'];
+                $_SESSION['Username'] = $row['Username'];
                 header("Location: dashboards/doctor_dashboard.php");
             }
             if($usertype == "pharmacist"){
@@ -54,6 +56,7 @@ if(isset($_POST["submit"])){
                 $row = mysqli_fetch_assoc($result);
                 $_SESSION['Names'] = $row['Names'];
                 $_SESSION['SSN'] = $row['SSN'];
+                $_SESSION['Username'] = $row['Username'];
                 header("Location: dashboards/pharmacist_dashboard.php");
             }
             if($usertype == "supervisor"){

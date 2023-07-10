@@ -164,6 +164,15 @@ if($conn->query($sql) === TRUE){
     echo "Error creating table: " .$conn->error;
 }*/
 
+/*$sql = "ALTER TABLE PharmaCo 
+    ADD FOREIGN KEY (Username) REFERENCES Users (Username)";
+
+if($conn->query($sql) === TRUE){
+    echo "Username is now a foreign key";
+}else {
+    echo "Error: " .$conn->error;
+};*/
+
 /*$sql="CREATE TABLE Contracts(
     ContractID VARCHAR(10) PRIMARY KEY,
     ContractText VARCHAR(100) NOT NULL,
@@ -292,4 +301,24 @@ if($conn->query($sql) === TRUE){
     echo "Error: " .$conn->error;
 };*/
 
+
+/*ALTER TABLE `supervisor` DROP FOREIGN KEY `supervisor_ibfk_2`; ALTER TABLE `supervisor` 
+ADD CONSTRAINT `supervisor_ibfk_2` FOREIGN KEY (`Username`) REFERENCES `users`(`Username`) 
+ON DELETE CASCADE ON UPDATE CASCADE;*/
+
+/*ALTER TABLE `patients` DROP FOREIGN KEY `patients_ibfk_1`; ALTER TABLE `patients` 
+ADD CONSTRAINT `patients_ibfk_1` FOREIGN KEY (`Username`) REFERENCES `users`(`Username`) 
+ON DELETE CASCADE ON UPDATE CASCADE;*/
+
+/*ALTER TABLE `doctors` DROP FOREIGN KEY `doctors_ibfk_1`; ALTER TABLE `doctors` 
+ADD CONSTRAINT `doctors_ibfk_1` FOREIGN KEY (`Username`) REFERENCES `users`(`Username`) 
+ON DELETE CASCADE ON UPDATE CASCADE;*/
+
+/*ALTER TABLE `pharmacist` DROP FOREIGN KEY `pharmacist_ibfk_1`; ALTER TABLE `pharmacist` 
+ADD CONSTRAINT `pharmacist_ibfk_1` FOREIGN KEY (`Username`) REFERENCES `users`(`Username`) 
+ON DELETE CASCADE ON UPDATE CASCADE;*/
+
+/*ALTER TABLE `pharmaco` DROP FOREIGN KEY `pharmaco_ibfk_1`; ALTER TABLE `pharmaco` 
+ADD CONSTRAINT `pharmaco_ibfk_1` FOREIGN KEY (`Username`) REFERENCES `users`(`Username`) 
+ON DELETE CASCADE ON UPDATE CASCADE;*/
 ?>
