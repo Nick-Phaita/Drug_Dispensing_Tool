@@ -20,10 +20,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $usertype = $_POST["Usertype"];
     $password = $_POST["Password"];
 
-    if(empty($username) || empty($usertype) || empty($password)){
-        echo "All fields are required ";
-        
-    }
+    
 
     if($usertype == "supervisor"){
         $sql="UPDATE Users SET Username='$usernameNew',Usertype='$usertype',

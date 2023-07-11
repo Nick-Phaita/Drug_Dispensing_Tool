@@ -41,10 +41,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $Username = $_POST['Username'];
     $PrimaryPhysicianSSN = $_POST['PrimaryPhysicianSSN'];
 
-    if(empty($username) || empty($usertype) || empty($password)){
-        echo "All fields are required ";
-        
-    }
+    
 
     $sql="UPDATE Patients SET SSN='$SSNnew', Names='$Names', Gender='$Gender', Allergies = '$Allergies',
         HeightinCm='$HeightinCm', WeightinKg='$WeightinKg', PatientAddress='$PatientAddress', 
