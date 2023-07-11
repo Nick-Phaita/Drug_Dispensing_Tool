@@ -29,5 +29,5 @@ try{
     }
 
 //$conn->close();
-/*/project-drug-dispenser/Drug_Dispensing_Tool-for chege configuration*/
+
 ?>
