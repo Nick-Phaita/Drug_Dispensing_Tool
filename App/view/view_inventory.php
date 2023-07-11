@@ -10,11 +10,22 @@ $SSN = $_SESSION['SSN'];
 $sqlretrieve = "";
 
 if($_SESSION['Usertype'] == "doctor"){
+    $title = "Available Drugs";
     $sqlretrieve = "SELECT TradeName,Price, PharmacyName, PharmacyAddress, PhoneNo FROM (inventory NATURAL JOIN pharmacy);";
 }
 
 if($_SESSION['Usertype'] == "pharmacist"){
+    $title = "Pharmacy Inventory";
     $sql = "SELECT * FROM Pharmacist WHERE SSN = '$SSN'";
+    $result = mysqli_query($conn, $sql);
+    $row=$result->fetch_assoc();
+    $PharmacyID = $row['PharmacyID'];
+    $sqlretrieve = "SELECT * FROM inventory WHERE PharmacyID='$PharmacyID';";
+}
+
+if($_SESSION['Usertype'] == "supervisor"){
+    $title = "Pharmacy Inventory";
+    $sql = "SELECT * FROM Supervisor WHERE SSN = '$SSN'";
     $result = mysqli_query($conn, $sql);
     $row=$result->fetch_assoc();
     $PharmacyID = $row['PharmacyID'];
@@ -32,7 +43,7 @@ if($result->num_rows > 0){
 
     </head>
     <body>
-        <h1>Available Drugs </h1>
+        <h1><?php echo $title?> </h1>
         <table style='border:1px solid black' id='prescriptionsTable'>
             <?php $attributes = $result->fetch_fields(); ?>
             <tr style='border:1px solid black'>
@@ -45,6 +56,8 @@ if($result->num_rows > 0){
                     <?php foreach($row as $data){ ?>
                     <td style='border:1px solid black'><?php echo $data ?></td>
                     <?php } ?> 
+                    <?php if($_SESSION['Usertype'] == "supervisor"){ ?>
+                        <td><a href='/App/update/edit_inventory.php?PharmacyID=<?php echo $row["PharmacyID"]?>'>Edit</a></td><?php }?>
                 </tr>
             <?php } ?>
         </table>

@@ -2,7 +2,7 @@
 
 <?php 
 //make phone numbers unique
-//primary physician in patients table
+//primary physician in patients table - done
 
 $servername = "localhost";
 $username = "root";
