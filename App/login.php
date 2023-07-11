@@ -78,11 +78,10 @@ if(isset($_POST["submit"])){
                 header("Location: dashboards/pharmaco_dashboard.php");
             }
             if($usertype == "admin"){
-                /*$sql = "SELECT * FROM PharmaCo WHERE Username='$username'";
+                $sql = "SELECT * FROM Users WHERE Username='$username'";
                 $result = mysqli_query($conn, $sql);
                 $row = mysqli_fetch_assoc($result);
-                $_SESSION['Names'] = $row['CompanyName'];
-                $_SESSION['Username'] = $row['Username'];*/
+                $_SESSION['Username'] = $row['Username'];
                 header("Location: dashboards/admin_dashboard.php");
             }
 

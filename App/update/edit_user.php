@@ -57,6 +57,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $_SESSION['Username'] = $usernameNew;
         header("Location: ../dashboards/pharmaco_dashboard.php");
     }
+    if($usertype == "admin"){
+        $sql="UPDATE Users SET Username='$usernameNew',Usertype='$usertype',
+        Password='$password' WHERE Username='$usernameOld'";
+        $result1 = mysqli_query($conn, $sql);
+        $_SESSION['Username'] = $usernameNew;
+        header("Location: ../dashboards/admin_dashboard.php");
+    }
     
     
 
