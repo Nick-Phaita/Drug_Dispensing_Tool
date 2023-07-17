@@ -22,8 +22,8 @@ $result = mysqli_query($conn, $query);
       
        
     
-echo '<script type="text/javascript" src="../scripts.js"></script>';
-echo '<button onclick="back()">Back to Dashboard</button>';
+echo '<a href="../dashboards/admin_dashboard.php">Back to Dashboard</a>';
+
 if($result->num_rows > 0){
     ?>
     

@@ -29,9 +29,8 @@ $result = $conn->query($sqlretrieve);
 
 if($_SESSION['Usertype']=='pharmaceuticalcompany'){
     echo '<a href="../dashboards/pharmaco_dashboard.php">Back to Dashboard</a>'; 
-}else{
-    echo '<script type="text/javascript" src="../scripts.js"></script>';
-    echo '<button onclick="back()">Back to Dashboard</button>';
+}elseif($_SESSION['Usertype']=='supervisor'){
+    echo '<a href="../dashboards/supervisor_dashboard.php">Back to Dashboard</a>';
 }
 
 

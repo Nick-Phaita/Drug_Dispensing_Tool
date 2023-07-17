@@ -36,9 +36,10 @@ $result = $conn->query($sqlretrieve);
 
 if($_SESSION['Usertype']=='supervisor'){
     echo '<a href="../dashboards/supervisor_dashboard.php">Back to Dashboard</a>';
-}else{
-    echo '<script type="text/javascript" src="../scripts.js"></script>';
-    echo '<button onclick="back()">Back to Dashboard</button>';
+}elseif($_SESSION['Usertype']=='doctor'){
+    echo '<a href="../dashboards/doctor_dashboard.php">Back to Dashboard</a>';
+}elseif($_SESSION['Usertype']=='pharmacist'){
+    echo '<a href="../dashboards/pharmacist_dashboard.php">Back to Dashboard</a>';
 }
 
 

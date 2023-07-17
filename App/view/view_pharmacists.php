@@ -20,8 +20,9 @@ if($_SESSION['Usertype'] == "supervisor"){
 
 $result = $conn->query($sqlretrieve);
 
-echo '<script type="text/javascript" src="../scripts.js"></script>';
-echo '<button onclick="back()">Back to Dashboard</button>';
+if($_SESSION['Usertype']=='supervisor'){
+    echo '<a href="../dashboards/supervisor_dashboard.php">Back to Dashboard</a>';
+}
 
 if($result->num_rows > 0){
     ?>
