@@ -62,6 +62,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Edit Patient</title>
         <link rel="stylesheet" type="text/css" href="">
+        <script type="text/javascript" src="../scripts.js"></script>
 
     </head>
     <body>
@@ -92,7 +93,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             <input type="date" name="DateOfBirth" id="DateOfBirth" value="<?php echo $DateOfBirth?>" required><br>
             <label for="PrimaryPhysicianSSN">Primary Physician SSN:</label><br>
             <input type="text" id="PrimaryPhysicianSSN" name="PrimaryPhysicianSSN" value="<?php echo $PrimaryPhysicianSSN?>" required placeholder="Enter your physician's SSN"><br>
-            <input type="submit" value="Submit">
+            <input type="submit" value="Submit"><br><br>
+            <input type="reset" onclick="return confirm_reset();"><br><br>
+            <button onclick="cancel()">Cancel</button>
         </form>
     </body> 
 </html>

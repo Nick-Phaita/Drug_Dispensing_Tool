@@ -19,6 +19,9 @@ if($_SESSION['Usertype'] == "doctor" || $_SESSION['Usertype'] == "pharmacist"){
 
 $result = $conn->query($sqlretrieve);
 
+echo '<script type="text/javascript" src="../scripts.js"></script>';
+echo '<button onclick="back()">Back to Dashboard</button>';
+
 if($result->num_rows > 0){
     ?>
     
@@ -29,6 +32,7 @@ if($result->num_rows > 0){
     </head>
     <body>
         <h1>Prescriptions</h1>
+        
         <table style='border:1px solid black' id='prescriptionsTable'>
             <?php $attributes = $result->fetch_fields(); ?>
             <tr style='border:1px solid black'>
@@ -48,7 +52,7 @@ if($result->num_rows > 0){
             <?php } ?>
         </table>
     <?php }else {
-        echo "No results";
+        echo "<br>No results";
         } ?>
 
     <?php $conn->close();?>

@@ -22,7 +22,8 @@ $result = mysqli_query($conn, $query);
       
        
     
-
+echo '<script type="text/javascript" src="../scripts.js"></script>';
+echo '<button onclick="back()">Back to Dashboard</button>';
 if($result->num_rows > 0){
     ?>
     
@@ -33,7 +34,6 @@ if($result->num_rows > 0){
     </head>
     <body>
         <h1>Users </h1>
-        <a href="../dashboards/admin_dashboard.php">Back to Dashboard</a>
         <table style='border:1px solid black' id='prescriptionsTable'>
             <?php $attributes = $result->fetch_fields(); ?>
             <tr style='border:1px solid black'>
@@ -58,7 +58,7 @@ if($result->num_rows > 0){
     
     ?>
     <?php }else {
-        echo "No results";
+        echo "<br>No results";
         } ?>
 
     <?php $conn->close();?>
