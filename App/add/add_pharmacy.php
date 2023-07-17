@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pharmacy Registration</title>
+    <script type="text/javascript" src="../scripts.js"></script>
 </head>
 <body>
     <h1>Pharmacy Registration</h1>
@@ -17,8 +18,12 @@
         <input type="text" name="PharmacyAddress" id="PharmacyAddress" placeholder="Enter your address" required><br>
         <label for="PhoneNo">Phone Number:</label><br>
         <input type="number" name="PhoneNo" id="PhoneNo" placeholder="Enter Phone no." required><br><br>
-        <input type="submit" value="Submit">
-    </form>
+        <input type="submit" value="Submit"><br><br>
+        <input type="reset" onclick="return confirm_reset();">
+        
+    </form><br>
+    <button onclick="cancel()">Cancel</button>
+    
 </body>
 </html>
 
@@ -26,7 +31,7 @@
 require_once("../connection.php");
 
 try{
-    if($_SERVER["REQUEST_METHOD"] == "POST"){
+    if(isset($_POST['Submit'])){
         $PharmacyID = $_POST["PharmacyID"];
         $PharmacyName = $_POST["PharmacyName"];
         $PharmacyAddress = $_POST["PharmacyAddress"];
@@ -45,6 +50,7 @@ if($conn->query($sql) === TRUE) {
 }else {
     echo "Error: ".$sql."<br>".$conn->error;
 }}
+
 }catch(Exception){
     echo "<script>alert('Duplicate SSN entered')</script>";
 

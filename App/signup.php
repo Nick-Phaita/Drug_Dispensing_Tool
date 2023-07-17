@@ -24,9 +24,11 @@ try{
             header("Location: registration/registerSupervisor.php");
             }elseif($usertype == "pharmaceuticalcompany"){
             header("Location: registration/registerPharmaco.php");
-            }
-        }else {
+            }elseif($usertype == "admin"){
+                header("Location: login.html");
+            }else {
         echo "Error: ".$sql."<br>".$conn->error;
+            }
         }
     }
 }catch(Exception){

@@ -15,6 +15,7 @@ if (isset( $_SESSION['loggedin'])) {
      <p style="text-align: left;"><a href="../signout.php">Sign Out</a></p>
      <p><a href="../update/edit_user.php">Edit Profile</a></p>
      <p><a href="../add/add_pharmacy.php">Add pharmacy</a></p>
+     <p><a href="../view/view_users.php">View Users</a></p>
 </body>
 </html>
 

@@ -77,6 +77,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 <html>
     <head>
         <title></title>
+        <script type="text/javascript" src="../scripts.js"></script>
 
     </head>
     <body>
@@ -95,7 +96,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             </select> <br><br>
             <label for="Password">Password</label>
             <input type="password" name="Password" id="Password" value = "<?php echo $password;?>" required> <br>
-            <button type="submit" name="submit">Confirm</button>
+            <button type="submit" name="submit">Confirm</button><br><br>
+            <input type="reset" onclick="return confirm_reset();"><br><br>
+            <button onclick="cancel()">Cancel</button>
         </form>
     </body> 
 </html>
