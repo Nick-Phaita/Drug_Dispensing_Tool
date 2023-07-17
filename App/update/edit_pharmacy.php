@@ -43,6 +43,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Pharmacy</title>
+    <script type="text/javascript" src="../scripts.js"></script>
 </head>
 <body>
     <h1>Edit Pharmacy Details</h1>
@@ -56,7 +57,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <input type="text" name="PharmacyAddress" id="PharmacyAddress" value='<?php echo $PharmacyAddress?>' placeholder="Enter your address" required><br>
         <label for="PhoneNo">Phone Number:</label><br>
         <input type="number" name="PhoneNo" id="PhoneNo" value='<?php echo $PhoneNo?>' placeholder="Enter Phone no." required><br><br>
-        <input type="submit" value="Submit">
+        <input type="submit" value="Submit"><br><br>
+        <input type="reset" onclick="return confirm_reset();"><br><br>
+        <button onclick="cancel()">Cancel</button>
     </form>
 </body>
 </html>

@@ -52,6 +52,7 @@ if($_SERVER["REQUEST_METHOD"]== "POST"){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Doctor</title>
+    <script type="text/javascript" src="../scripts.js"></script>
 </head>
 <body>
     <h1>Edit Doctor Details</h1>
@@ -70,7 +71,10 @@ if($_SERVER["REQUEST_METHOD"]== "POST"){
         <input type="text" name="LicenseNo" id="LicenseNo" value="<?php echo $LicenseNo?>" required placeholder="Enter your license number"><br>
         <label for="PhoneNo">Phone Number: </label><br>
         <input type="text" name="PhoneNo" id="PhoneNo" value="<?php echo $PhoneNo?>" required placeholder="Enter your phone number"><br><br>
-        <input type="submit" value="Submit">
+        <input type="submit" value="Submit"><br><br>
+        <input type="reset" onclick="return confirm_reset();"><br><br>
+        <button onclick="cancel()">Cancel</button>
+
     </form>
 </body>
 </html>

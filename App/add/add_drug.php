@@ -8,6 +8,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drugs</title>
+    <script type="text/javascript" src="../scripts.js"></script>
 </head>
 <body>
     <h1>Add drug</h1>
@@ -19,7 +20,9 @@ session_start();
         <input type="text" id="Formula" name="Formula" placeholder="Enter the formula" required><br>
         <label for="CompanyID">Company ID:</label><br>
         <input type="text" name="CompanyID" id="CompanyID" value="<?php echo $_SESSION['CompanyID']?>" required><br><br>
-        <input type="submit" value="Submit">
+        <input type="submit" value="Submit"><br><br>
+        <input type="reset" onclick="return confirm_reset();"><br><br>
+        <button onclick="cancel()">Cancel</button>
     </form>
 </body>
 </html>

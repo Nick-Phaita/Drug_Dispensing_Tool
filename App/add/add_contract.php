@@ -8,6 +8,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contract Creation</title>
+    <script type="text/javascript" src="../scripts.js"></script>
 </head>
 <body>
     <h1>Add Contract</h1>
@@ -27,7 +28,9 @@ session_start();
         <input type="text" id="PharmacyID" name="PharmacyID" placeholder="Enter pharmacy ID" required><br>
         <label for="SupervisorSSN">Supervisor SSN:</label><br>
         <input type="number" id="SupervisorSSN" name="SupervisorSSN" placeholder="Enter the supervisor's SSN" required><br><br>
-        <input type="submit" value="Submit">
+        <input type="submit" value="Submit"><br><br>
+        <input type="reset" onclick="return confirm_reset();"><br><br>
+        <button onclick="cancel()">Cancel</button>
         
     </form>
 </body>

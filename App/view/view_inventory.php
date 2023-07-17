@@ -34,6 +34,14 @@ if($_SESSION['Usertype'] == "supervisor"){
 
 $result = $conn->query($sqlretrieve);
 
+if($_SESSION['Usertype']=='supervisor'){
+    echo '<a href="../dashboards/supervisor_dashboard.php">Back to Dashboard</a>';
+}else{
+    echo '<script type="text/javascript" src="../scripts.js"></script>';
+    echo '<button onclick="back()">Back to Dashboard</button>';
+}
+
+
 if($result->num_rows > 0){
     ?>
     
@@ -62,7 +70,7 @@ if($result->num_rows > 0){
             <?php } ?>
         </table>
     <?php }else {
-        echo "No results";
+        echo "<br>No results";
         } ?>
 
     <?php $conn->close();?>

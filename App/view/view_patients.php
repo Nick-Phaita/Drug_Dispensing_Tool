@@ -11,6 +11,9 @@ $sqlretrieve = "SELECT * FROM Patients";
 
 $result = $conn->query($sqlretrieve);
 
+echo '<script type="text/javascript" src="../scripts.js"></script>';
+echo '<button onclick="back()">Back to Dashboard</button>';
+
 if($result->num_rows > 0){
     ?>
     
@@ -37,7 +40,7 @@ if($result->num_rows > 0){
             <?php } ?>
         </table>
     <?php }else {
-        echo "No results";
+        echo "<br>No results";
         } ?>
 
     <?php $conn->close();?>

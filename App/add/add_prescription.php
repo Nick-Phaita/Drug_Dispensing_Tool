@@ -9,6 +9,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prescription</title>
+    <script type="text/javascript" src="../scripts.js"></script>
 </head>
 <body>
     <h1>Make Prescription</h1>
@@ -53,7 +54,9 @@ session_start();
         <textarea name="Instructions" id="Instructions" cols="30" rows="10" placeholder="Enter prescriber's instructions"></textarea><br>
         <label for="PrescriptionDate">Date:</label><br>
         <input type="date" name="PrescriptionDate" id="PrescriptionDate" placeholder="Enter the date" required><br><br>
-        <input type="submit" value="Submit">
+        <input type="submit" value="Submit"><br><br>
+        <input type="reset" onclick="return confirm_reset();"><br><br>
+        <button onclick="cancel()">Cancel</button>
     </form>
 </body>
 </html>

@@ -52,6 +52,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Contract</title>
+    <script type="text/javascript" src="../scripts.js"></script>
 </head>
 <body>
     <h1>Edit Contract</h1>
@@ -71,7 +72,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <input type="text" id="PharmacyID" name="PharmacyID" value="<?php echo $PharmacyID?>" placeholder="Enter pharmacy ID" required><br>
         <label for="SupervisorSSN">Supervisor SSN:</label><br>
         <input type="number" id="SupervisorSSN" name="SupervisorSSN" value="<?php echo $SupervisorSSN?>" placeholder="Enter the supervisor's SSN" required><br><br>
-        <input type="submit" value="Submit">
+        <input type="submit" value="Submit"><br><br>
+        <input type="reset" onclick="return confirm_reset();"><br><br>
+        <button onclick="cancel()">Cancel</button>
         
     </form>
 </body>

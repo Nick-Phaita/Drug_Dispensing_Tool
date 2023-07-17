@@ -19,8 +19,16 @@ if($_SESSION['Usertype'] == "doctor" || $_SESSION['Usertype'] == "pharmacist"){
 
 $result = $conn->query($sqlretrieve);
 
-echo '<script type="text/javascript" src="../scripts.js"></script>';
-echo '<button onclick="back()">Back to Dashboard</button>';
+if($_SESSION['Usertype']=='doctor'){
+    echo '<a href="../dashboards/doctor_dashboard.php">Back to Dashboard</a>';
+}else{
+    echo '<script type="text/javascript" src="../scripts.js"></script>';
+    echo '<button onclick="back()">Back to Dashboard</button>';
+}
+
+
+
+
 
 if($result->num_rows > 0){
     ?>

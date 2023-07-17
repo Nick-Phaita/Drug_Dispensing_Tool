@@ -60,10 +60,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prescription</title>
+    <title>Edit Prescription</title>
+    <script type="text/javascript" src="../scripts.js"></script>
 </head>
 <body>
-    <h1>Make Prescription</h1>
+    <h1>Edit Prescription</h1>
 
     <form action="" method="post">
         <label for="PrescriptionID">Prescription ID:</label><br>
@@ -105,7 +106,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         <textarea name="Instructions" id="Instructions" cols="30" rows="10" placeholder="Enter prescriber's instructions"><?php echo $Instructions?></textarea><br>
         <label for="PrescriptionDate">Date:</label><br>
         <input type="date" name="PrescriptionDate" id="PrescriptionDate" value="<?php echo $PrescriptionDate?>" placeholder="Enter the date" required><br><br>
-        <input type="submit" value="Submit">
+        <input type="submit" value="Submit"><br><br>
+        <input type="reset" onclick="return confirm_reset();"><br><br>
+        <button onclick="cancel()">Cancel</button>
     </form>
 </body>
 </html>

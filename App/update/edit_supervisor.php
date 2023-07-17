@@ -43,6 +43,7 @@ if($_SERVER["REQUEST_METHOD"]== "POST"){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Supervisor</title>
+    <script type="text/javascript" src="../scripts.js"></script>
 </head>
 <body>
     <h1>Edit Supervisor Details</h1>
@@ -80,7 +81,9 @@ if($_SERVER["REQUEST_METHOD"]== "POST"){
                 // While loop must be terminated
             ?>
         </select><br><br>
-        <input type="submit" name="Submit">
+        <input type="submit" name="Submit"><br><br>
+        <input type="reset" onclick="return confirm_reset();"><br><br>
+        <button onclick="cancel()">Cancel</button>
 
 
     </form>
