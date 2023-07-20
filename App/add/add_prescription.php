@@ -1,6 +1,13 @@
 <?php
 require_once("../connection.php");
 session_start();
+
+if($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["SSN"])){
+    $PatientSSN = $_GET["SSN"];
+}else{
+    $PatientSSN = "";
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -68,12 +75,12 @@ session_start();
 
                     <div class="field">
                     <label for="DoctorSSN">Doctor SSN:</label><br>
-                    <input type="text" name="DoctorSSN" id="DoctorSSN" value="<?php echo $_SESSION['SSN']?>" required><br>
+                    <input type="text" name="DoctorSSN" id="DoctorSSN" value="<?php echo $_SESSION['SSN']?>" readonly required><br>
                     </div>
 
                     <div class="field">
                     <label for="PatientSSN">Patient SSN:</label><br>
-                    <input type="text" name="PatientSSN" id="PatientSSN" placeholder="Enter the patient's SSN" required><br>
+                    <input type="text" name="PatientSSN" id="PatientSSN" value="<?php echo $PatientSSN?>" placeholder="Enter the patient's SSN" required><br>
                     </div>
 
                     <div class="field-txtarea">
@@ -87,9 +94,9 @@ session_start();
                     </div>
 
                     <br>
-                    <input class="button" type="submit" value="Submit"><br><br>
-                    <input class="button" type="reset" onclick="return confirm_reset();"><br><br>
-                    <input class="button" type="cancel" onclick="return cancel()" value="Cancel">
+                    <input class="button" type="submit" value="Submit">
+                    <input class="button" type="reset" onclick="return confirm_reset();">
+                    <input class="button" type="button" onclick="return cancel()" value="Cancel">
                 </form>
             </div>
 

@@ -2,7 +2,7 @@
 require_once("connection.php");
 session_start();
 //should clear all previous session data *to be done
-if(isset($_POST["submit"])){
+if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     function validate($data){
         $data = trim($data);
@@ -26,7 +26,7 @@ if(isset($_POST["submit"])){
     $sql = "SELECT * FROM Users WHERE Username='$username' AND Password='$password'";
 
     $result = mysqli_query($conn, $sql);
-
+        
     if (mysqli_num_rows($result) === 1) {
         $row = mysqli_fetch_assoc($result);
         $_SESSION['Usertype'] = $row['Usertype'];

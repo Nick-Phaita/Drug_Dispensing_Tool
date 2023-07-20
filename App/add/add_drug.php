@@ -35,16 +35,14 @@ session_start();
 
         <div class="field">
         <label for="CompanyID">Company ID:</label><br>
-        <input type="text" name="CompanyID" id="CompanyID" value="<?php echo $_SESSION['CompanyID']?>" required><br>
+        <input type="text" name="CompanyID" id="CompanyID" value="<?php echo $_SESSION['CompanyID']?>" readonly required><br>
         </div>
         <br>
 
 
-        <input class="button"type="submit" value="Submit"><br><br>
-        <input class="button"type="reset" onclick="return confirm_reset();"><br><br>
-        <input class="button" type="cancel" onclick="return cancel()" value="Cancel">
-
-        <button onclick="return cancel()">Cancel</button>
+        <input class="button"type="submit" value="Submit">
+        <input class="button"type="reset" onclick="return confirm_reset();">
+        <input class="button" type="button" onclick="return cancel()" value="Cancel">
     </form>
     </div>
 </body>
