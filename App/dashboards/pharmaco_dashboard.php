@@ -16,7 +16,7 @@ if (isset( $_SESSION['loggedin'])) {
 <html>
 <head>
 	<title>Pharmaceutical Company Dashboard</title>
-	<<link rel="stylesheet" type="text/css" href="../styles/dashboard.css">
+	<link rel="stylesheet" type="text/css" href="../styles/dashboard.css">
     <link rel="stylesheet" type="text/css" href="../styles/style.css">
 </head>
 <body>
