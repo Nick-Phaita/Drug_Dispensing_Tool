@@ -96,9 +96,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             </select> <br><br>
             <label for="Password">Password</label>
             <input type="password" name="Password" id="Password" value = "<?php echo $password;?> " required minlength="8"> <br>
-            <button type="submit" name="submit">Confirm</button><br><br>
+            <input type="submit" name="submit" value="Confirm">
             <input type="reset" onclick="return confirm_reset();"><br><br>
-            <button onclick="return cancel()">Cancel</button>
+            <input class="button" type="button" onclick="return cancel()" value="Cancel">
         </form>
     </body> 
 </html>

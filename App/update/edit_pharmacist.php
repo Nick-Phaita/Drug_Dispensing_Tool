@@ -82,7 +82,7 @@ if($_SERVER["REQUEST_METHOD"]== "POST"){
         </select><br><br>
         <input type="submit" name="Submit"><br><br>
         <input type="reset" onclick="return confirm_reset();"><br><br>
-        <button onclick="return cancel()">Cancel</button>
+        <input class="button" type="button" onclick="return cancel()" value="Cancel">
 
 
     </form>

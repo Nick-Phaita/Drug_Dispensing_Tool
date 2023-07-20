@@ -42,9 +42,7 @@ session_start();
 
         <input class="button"type="submit" value="Submit"><br><br>
         <input class="button"type="reset" onclick="return confirm_reset();"><br><br>
-        <input class="button" type="cancel" onclick="return cancel()" value="Cancel">
-
-        <button onclick="return cancel()">Cancel</button>
+        <input class="button" type="button" onclick="return cancel()" value="Cancel">
     </form>
     </div>
 </body>
