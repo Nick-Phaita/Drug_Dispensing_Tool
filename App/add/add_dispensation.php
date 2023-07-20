@@ -8,24 +8,51 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dispensation</title>
-    <script type="text/javascript" src="../scripts.js"></script>
+    <link rel="stylesheet" type="text/css" href="../styles/style.css">
+        <!--<link rel="stylesheet" type="text/css" href="../styles/form.css">-->
+        <script type="text/javascript" src="../scripts.js"></script>
+        <link rel="stylesheet" type="text/css" href="../styles/form.css">
+        <link rel="stylesheet" type="text/css" href="../styles/style.css">
+        <link rel="stylesheet" type="text/css" href="styles/login-signup_form.css">
 </head>
 <body>
-    <h1>Make Dispensation</h1>
+    <div class="form">
+            <div class="left-container">
+                        <div class="icon">
+                            <h2 class="logo">Dispenzer</h2>
+                        </div>
+                        <h1>Dispense Drug</h1>
+             </div>
+        <div class="right-container">
+            <form action="" method="post">
+                <div class="field">
+                <label for="DispensationID">Dispensation ID:</label><br>
+                <input type="text" id="DispensationID" name="DispensationID" placeholder="Enter dispensation ID" required><br>
+                </div>
 
-    <form action="" method="post">
-        <label for="DispensationID">Dispensation ID:</label><br>
-        <input type="text" id="DispensationID" name="DispensationID" placeholder="Enter dispensation ID" required><br>
-        <label for="PrescriptionID">Prescription ID:</label><br>
-        <input type="text" id="PrescriptionID" name="PrescriptionID" placeholder="Enter the prescription ID" required><br>
-        <label for="PharmacistSSN">Pharmacist SSN:</label><br>
-        <input type="number" name="PharmacistSSN" id="PharmacistSSN" value="<?php echo $_SESSION['SSN']?>" required><br>
-        <label for="DispensationDate">Date:</label><br>
-        <input type="date" name="DispensationDate" id="DispensationDate" required><br><br>
-        <input type="submit" value="Submit"><br><br>
-        <input type="reset" onclick="return confirm_reset();"><br><br>
-        <button onclick="return cancel()">Cancel</button>
-    </form>
+                <div class="field">
+                <label for="PrescriptionID">Prescription ID:</label><br>
+                <input type="text" id="PrescriptionID" name="PrescriptionID" placeholder="Enter the prescription ID" required><br>
+                </div>
+
+                <div class="field">
+                <label for="PharmacistSSN">Pharmacist SSN:</label><br>
+                <input type="number" name="PharmacistSSN" id="PharmacistSSN" value="<?php echo $_SESSION['SSN']?>" required><br>
+                </div>
+
+                <div class="field">
+                <label for="DispensationDate">Date:</label><br>
+                <input type="date" name="DispensationDate" id="DispensationDate" required><br>
+                </div>
+                <br>
+
+                <input class="button"type="submit" value="Submit"><br><br>
+                <input  class="button"type="reset" onclick="return confirm_reset();"><br><br>
+                <input  class="button" type="cancel" onclick="return cancel()" value="Cancel">
+                
+            </form>
+        </div>
+    </div>
 </body>
 </html>
 
