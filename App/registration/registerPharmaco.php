@@ -8,22 +8,48 @@ require_once("../signup.php");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register Pharmaceutical Company</title>
+    <link rel="stylesheet" type="text/css" href="../styles/style.css">
+        <!--<link rel="stylesheet" type="text/css" href="../styles/form.css">-->
+        <script type="text/javascript" src="../scripts.js"></script>
+        <link rel="stylesheet" type="text/css" href="../styles/form.css">
+        <link rel="stylesheet" type="text/css" href="../styles/style.css">
 </head>
 <body>
-    <h1>Pharmaceutical Company sign-up</h1>
-    <form action="register_pharmaco.php" method="post">
-        <label for="Username">Username: </label><br>
-        <input type="text" name="Username" id="Username" required value="<?php echo $_SESSION['Username']?>" readonly><br>
-        <label for="CompanyID">Company ID:</label><br>
-        <input type="text" name="CompanyID" id="CompanyID" placeholder="Enter your company ID" required><br>
-        <label for="">Company Name:</label><br>
-        <input type="text" name="CompanyName" id="CompanyName" placeholder="Enter your company name" required><br>
-        <label for="">Phone No:</label><br>
-        <input type="text" name="PhoneNo" id="PhoneNo" placeholder="Enter the company contact" required>
-        <br><br>
-        <input type="submit" name="Submit">
+    <div class="form">
+               <div class="left-container">
+                    <div class="icon">
+                        <h2 class="logo">Dispenzer</h2>
+                    </div>
+                    <h1>Pharmaceutical Company sign-up</h1>
+                </div> 
+        <div class="right-container">
+        <form action="register_pharmaco.php" method="post">
+            <div class="field">
+            <label for="Username">Username: </label><br>
+            <input type="text" name="Username" id="Username" required value="<?php echo $_SESSION['Username']?>" readonly><br>
+            </div>
+
+            <div class="field">
+            <label for="CompanyID">Company ID:</label><br>
+            <input type="text" name="CompanyID" id="CompanyID" placeholder="Enter your company ID" required><br>
+            </div>
+
+            <div class="field">
+            <label for="">Company Name:</label><br>
+            <input type="text" name="CompanyName" id="CompanyName" placeholder="Enter your company name" required><br>
+            </div>
+
+            <div class="field">
+            <label for="">Phone No:</label><br>
+            <input type="text" name="PhoneNo" id="PhoneNo" placeholder="Enter the company contact" required>
+            <br><br>
+            </div>
+
+            <input class="button" type="submit" name="Submit">
 
 
-    </form>
+        </form>
+        </div>
+    </div>
 </body>
 </html>
