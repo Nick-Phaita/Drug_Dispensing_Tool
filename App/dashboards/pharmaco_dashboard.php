@@ -24,6 +24,7 @@ if (isset( $_SESSION['loggedin'])) {
         <div class="header">
             <div class="icon">
                 <h2 class="logo">Dispenzer</h2>
+                
             </div>
 
             <div class="greetings">
@@ -31,7 +32,7 @@ if (isset( $_SESSION['loggedin'])) {
                 <h3>Hello, <?php echo $_SESSION['Username']?></h3>
             </div>
 
-            <h2>Patient Dashboard</h2>
+            <h2>Pharmaceutical Company Dashboard</h2>
         </div>
 
         <hr>

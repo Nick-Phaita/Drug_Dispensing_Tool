@@ -22,7 +22,7 @@ if (isset( $_SESSION['loggedin'])) {
                <h1>Hello, Administrator</h1>
             </div>
 
-            <h2>Patient Dashboard</h2>
+            <h2>Administrator Dashboard</h2>
         </div>
 
         <hr>

@@ -24,7 +24,7 @@ if (isset( $_SESSION['loggedin'])) {
                 <h3>Hello, <?php echo $_SESSION['Names']?></h3>
             </div>
 
-            <h2>Doctors Dashboard</h2>
+            <h2>Doctor Dashboard</h2>
         </div>
 
         <hr>
