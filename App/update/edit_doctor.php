@@ -73,7 +73,7 @@ if($_SERVER["REQUEST_METHOD"]== "POST"){
         <input type="text" name="PhoneNo" id="PhoneNo" value="<?php echo $PhoneNo?>" required placeholder="Enter your phone number"><br><br>
         <input type="submit" value="Submit"><br><br>
         <input type="reset" onclick="return confirm_reset();"><br><br>
-        <button onclick="cancel()">Cancel</button>
+        <button onclick="return cancel()">Cancel</button>
 
     </form>
 </body>

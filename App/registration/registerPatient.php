@@ -81,8 +81,6 @@ require_once("../signup.php");
                     </div>
 
                     <input class="button" type="submit" value="Submit">
-                    <input class="button" type="reset" onclick="return confirm_reset();">
-                    <button class="button" onclick="cancel()">Cancel</button>
                 </form>
 
             </div>

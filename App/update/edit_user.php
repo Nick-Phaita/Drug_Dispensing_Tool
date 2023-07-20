@@ -95,10 +95,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 <option value="pharmaceuticalcompany">Pharmaceutical Company</option>
             </select> <br><br>
             <label for="Password">Password</label>
-            <input type="password" name="Password" id="Password" value = "<?php echo $password;?>" required> <br>
+            <input type="password" name="Password" id="Password" value = "<?php echo $password;?> " required minlength="8"> <br>
             <button type="submit" name="submit">Confirm</button><br><br>
             <input type="reset" onclick="return confirm_reset();"><br><br>
-            <button onclick="cancel()">Cancel</button>
+            <button onclick="return cancel()">Cancel</button>
         </form>
     </body> 
 </html>

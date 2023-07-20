@@ -56,7 +56,7 @@ session_start();
         <input type="date" name="PrescriptionDate" id="PrescriptionDate" placeholder="Enter the date" required><br><br>
         <input type="submit" value="Submit"><br><br>
         <input type="reset" onclick="return confirm_reset();"><br><br>
-        <button onclick="cancel()">Cancel</button>
+        <button onclick="return cancel()">Cancel</button>
     </form>
 </body>
 </html>

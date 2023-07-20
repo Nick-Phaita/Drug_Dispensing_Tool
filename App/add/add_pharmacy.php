@@ -22,7 +22,7 @@
         <input type="reset" onclick="return confirm_reset();">
         
     </form><br>
-    <button onclick="cancel()">Cancel</button>
+    <button onclick="return cancel()">Cancel</button>
     
 </body>
 </html>
