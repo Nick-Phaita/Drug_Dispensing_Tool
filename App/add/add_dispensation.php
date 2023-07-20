@@ -43,7 +43,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["PrescriptionID"])){
 
                 <div class="field">
                 <label for="PharmacistSSN">Pharmacist SSN:</label><br>
-                <input type="number" name="PharmacistSSN" id="PharmacistSSN" value="<?php echo $_SESSION['SSN']?>" required><br>
+                <input type="number" name="PharmacistSSN" id="PharmacistSSN" value="<?php echo $_SESSION['SSN']?>" readonly required><br>
                 </div>
 
                 <div class="field">
@@ -52,8 +52,8 @@ if($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["PrescriptionID"])){
                 </div>
                 <br>
 
-                <input class="button"type="submit" value="Submit"><br><br>
-                <input  class="button"type="reset" onclick="return confirm_reset();"><br><br>
+                <input class="button"type="submit" value="Submit">
+                <input  class="button"type="reset" onclick="return confirm_reset();">
                 <input  class="button" type="button" onclick="return cancel()" value="Cancel">
                 
             </form>

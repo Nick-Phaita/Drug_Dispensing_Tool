@@ -44,7 +44,7 @@
 
             <br>
 
-                <input class="button"   type="submit" value="Submit"><br><br>
+                <input class="button"   type="submit" value="Submit">
                 <input class="button" type="reset" onclick="return confirm_reset();">
                 <input  class="button" type="button" onclick="return cancel()" value="Cancel">
         

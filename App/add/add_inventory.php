@@ -29,7 +29,7 @@ session_start();
             <form action="" method="post">
                 <div class="field">
                     <label for="PharmacyID">Pharmacy ID:</label><br>
-                    <input type="text" id="PharmacyID" name="PharmacyID" value="<?php echo $_SESSION['PharmacyID']?>" required><br>
+                    <input type="text" id="PharmacyID" name="PharmacyID" value="<?php echo $_SESSION['PharmacyID']?>" readonly required><br>
                 </div>
 
                 <div class="field">
@@ -80,7 +80,7 @@ session_start();
                 <div class="field-bt">
 
                 <input class="button" type="submit" value="Submit">
-                <input  class="button" type="reset" onclick="return confirm_reset();"><br><br>
+                <input  class="button" type="reset" onclick="return confirm_reset();">
                 <input  class="button" type="button" onclick="return cancel()"  value="Cancel">
         
                 </div>

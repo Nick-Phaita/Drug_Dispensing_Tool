@@ -75,7 +75,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["SSN"])){
 
                     <div class="field">
                     <label for="DoctorSSN">Doctor SSN:</label><br>
-                    <input type="text" name="DoctorSSN" id="DoctorSSN" value="<?php echo $_SESSION['SSN']?>" required><br>
+                    <input type="text" name="DoctorSSN" id="DoctorSSN" value="<?php echo $_SESSION['SSN']?>" readonly required><br>
                     </div>
 
                     <div class="field">
@@ -94,8 +94,8 @@ if($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["SSN"])){
                     </div>
 
                     <br>
-                    <input class="button" type="submit" value="Submit"><br><br>
-                    <input class="button" type="reset" onclick="return confirm_reset();"><br><br>
+                    <input class="button" type="submit" value="Submit">
+                    <input class="button" type="reset" onclick="return confirm_reset();">
                     <input class="button" type="button" onclick="return cancel()" value="Cancel">
                 </form>
             </div>
