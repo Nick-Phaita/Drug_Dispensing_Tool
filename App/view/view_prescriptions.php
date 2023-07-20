@@ -57,6 +57,8 @@ if($result->num_rows > 0){
                     <?php } ?>
                     <?php if($_SESSION['Usertype'] == "doctor"){ ?>
                     <td><a href='/App/update/edit_prescription.php?PrescriptionID=<?php echo $row["PrescriptionID"]?>'>Edit</a></td><?php }?>
+                    <?php if($_SESSION['Usertype'] == "pharmacist"){ ?>
+                    <td><a href='/App/add/add_dispensation.php?PrescriptionID=<?php echo $row["PrescriptionID"]?>'>Dispense</a></td><?php }?>
                 </tr>
             <?php } ?>
         </table>

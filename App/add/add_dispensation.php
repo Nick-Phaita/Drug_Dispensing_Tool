@@ -1,5 +1,11 @@
 <?php
 session_start();
+
+if($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["PrescriptionID"])){
+    $PrescriptionID = $_GET["PrescriptionID"];
+}else{
+    $PrescriptionID = "";
+}
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +38,7 @@ session_start();
 
                 <div class="field">
                 <label for="PrescriptionID">Prescription ID:</label><br>
-                <input type="text" id="PrescriptionID" name="PrescriptionID" placeholder="Enter the prescription ID" required><br>
+                <input type="text" id="PrescriptionID" name="PrescriptionID" value="<?php echo $PrescriptionID?>" placeholder="Enter the prescription ID" required><br>
                 </div>
 
                 <div class="field">
