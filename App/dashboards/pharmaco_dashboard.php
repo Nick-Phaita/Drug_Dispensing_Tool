@@ -42,7 +42,7 @@ if (isset( $_SESSION['loggedin'])) {
             <div class="links-bar">
                 <ul>
                     <li><a href="../update/edit_user.php">Edit Profile</a></li>
-                    <li><a href="../update/edit_patient.php">Edit Details</a></li>
+                    <li><a href="../update/edit_pharmaco.php">Edit Details</a></li>
                     <li><a href="../add/add_contract.php">Sign Contract</a></li>
                     <li><a href="../view/view_contracts.php">View Contracts</a></li>
                     <li><a href="../add/add_drug.php">Add Drug</a></li>
