@@ -27,7 +27,8 @@ if($result->num_rows > 0){
     </head>
     <body>
         <h1>Patients </h1>
-        <table style='border:1px solid black' id='prescriptionsTable'>
+        <input type="text" onkeyup="searchTable()" class="search-input">
+        <table style='border:1px solid black' class="table-view">
             <?php $attributes = $result->fetch_fields(); ?>
             <tr style='border:1px solid black'>
                 <?php foreach($attributes as $field){?>
@@ -47,6 +48,8 @@ if($result->num_rows > 0){
         } ?>
 
     <?php $conn->close();?>
+
+    <script type="text/javascript" src="../scripts.js"></script>
         
     </body>
 </html>

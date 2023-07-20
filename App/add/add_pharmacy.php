@@ -59,7 +59,7 @@
 require_once("../connection.php");
 
 try{
-    if(isset($_POST['Submit'])){
+    if($_SERVER["REQUEST_METHOD"]=="POST"){
         $PharmacyID = $_POST["PharmacyID"];
         $PharmacyName = $_POST["PharmacyName"];
         $PharmacyAddress = $_POST["PharmacyAddress"];
