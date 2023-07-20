@@ -47,7 +47,7 @@ session_start();
         <label for="Quantity">Quantity:</label><br>
         <input type="text" name="Quantity" id="Quantity" placeholder="Enter the quantity" required><br>
         <label for="DoctorSSN">Doctor SSN:</label><br>
-        <input type="text" name="DoctorSSN" id="DoctorSSN" value="<?php echo $_SESSION['SSN']?>" required><br>
+        <input type="text" name="DoctorSSN" id="DoctorSSN" value="<?php echo $_SESSION['SSN']?>" required readonly><br>
         <label for="PatientSSN">Patient SSN:</label><br>
         <input type="text" name="PatientSSN" id="PatientSSN" placeholder="Enter the patient's SSN" required><br>
         <label for="Instructions">Instructions:</label><br>
