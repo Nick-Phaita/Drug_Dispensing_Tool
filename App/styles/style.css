@@ -2,6 +2,11 @@
     width: 1200px;
     height: 75px;
     margin: auto;
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: white;
+    z-index: 1;
 }
 
 .icon{
@@ -36,9 +41,11 @@ ul{
 ul li{
     list-style: none;
     margin-left: 62px;
-    margin-top: 27px;
+    margin-top: 5px;
     font-size: 20px;
 }
+
+
 
 ul li a{
     text-decoration: none;

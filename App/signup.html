@@ -4,30 +4,54 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Sign Up</title>
-        <link rel="stylesheet" type="text/css" href="">
+        <link rel="stylesheet" type="text/css" href="styles/login-signup_form.css">
+        <link rel="stylesheet" type="text/css" href="styles/style.css">
     </head>
     <body>
         <!--Logo when clicked leads back to home page-->
-        <a href="home.html">Home</a>
+        <a class="logo" href="home.html">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Dispenzer
+        </a>
 
-        <h1>Sign Up</h1>
-        <form action="signup.php" method="post">
-            <label for="username">Username</label>
-            <input type="text" name="username" id="username" required><br><br>
-            <label for="usertype">User Type</label>
-            <select name="usertype" id="usertype">
-                <option value="patient">Patient</option>
-                <option value="doctor">Doctor</option>
-                <option value="pharmacist">Pharmacist</option>
-                <option value="supervisor">Supervisor</option>
-                <option value="pharmaceuticalcompany">Pharmaceutical Company</option>
-                <option value="admin">Administrator</option>
-            </select> <br><br>
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password" required> <br>
-            <button type="submit" name="submit">Sign Up</button>
-        </form><br>
-        <a href="login.html">Already have an account? Login</a>
+        <section class="signup-form">
+            <h1>Sign Up</h1>
+            <form action="signup.php" method="post">
+                <div class="user-box">
+                    
+                    <input class="override" type="text" name="username" id="username" required>
+                    <label for="username">Username</label>
+                </div>
+                <div class="user-box">
+                    
+                    <select name="usertype" id="usertype" required>
+                        <option disabled hidden selected></option>
+                        <option value="patient">Patient</option>
+                        <option value="doctor">Doctor</option>
+                        <option value="pharmacist">Pharmacist</option>
+                        <option value="supervisor">Supervisor</option>
+                        <option value="pharmaceuticalcompany">Pharmaceutical Company</option>
+                        <option value="admin">Administrator</option>
+                    </select>  
+                    <label for="usertype">User Type</label>                  
+                </div>
+                <div class="user-box">
+                    
+                    <input type="password" name="password" id="password" required minlength="8"> <br>     
+                    <label for="password">Password</label>         
+                </div>
+                
+                
+                
+                <button type="submit" name="submit">Sign Up</button>
+            </form><br>
+            <a class="login-signup" href="login.html">Already have an account? Login</a>
+        </section>
+
+        
         
     </body>
 </html>

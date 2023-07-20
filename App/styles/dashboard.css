@@ -1,0 +1,90 @@
+
+h2{
+    text-align: center;
+}
+
+body{
+    height: 100%;
+}
+
+.greetings{
+    text-align: right;
+
+}
+
+.links-bar ul{
+    display: block;
+    padding: 0;
+}
+
+.links-bar ul li{
+    width: 100%;
+    margin: 20px;
+    
+}
+
+.links-bar{
+    position: relative;
+    display: inline-block;
+    top: 35%;
+    left: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in;
+    width: 15em;
+    height: 440px;
+    background: black;
+    font-size: 1.2em;
+}
+
+.links-bar ul li a{
+    color: white;
+}
+
+.links-bar ul li:hover{
+    background-color: rgb(17, 17, 17);
+}
+
+.main{
+    display: flex;
+    justify-content: left;
+    
+}
+
+.capabilities{
+    display: block;
+    align-items: top;
+    flex: 1;
+    width: 100%;
+    min-width: 260px;
+    
+}
+
+.capability{
+   margin: 30px ;
+}
+
+.capability h4{
+    display: inline;
+    border: 2px solid black;
+    border-left: none ;
+    border-right: none;
+    padding: 10px;
+    cursor: cell;
+    
+}
+
+.capability p{
+    display: none;
+    font-size: 20px;
+    
+}
+
+.capability h4:hover{
+    background-color: aqua;
+}
+
+.capability h4:hover ~ p{
+    display: inline;
+    background-color: black;
+    color: white;
+}
