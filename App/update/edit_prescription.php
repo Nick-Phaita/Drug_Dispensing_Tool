@@ -62,53 +62,85 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Prescription</title>
     <script type="text/javascript" src="../scripts.js"></script>
+    <link rel="stylesheet" type="text/css" href="../styles/form.css">
+    <link rel="stylesheet" type="text/css" href="../styles/style.css">
 </head>
 <body>
-    <h1>Edit Prescription</h1>
+    <div class="form">
+        <div class="left-container">
+            <div class="icon">
+            <h2 class="logo">Dispenzer</h2>
+        </div>
+            <h1>Edit Prescription</h1>
+        </div>
+            <div class="right-container">
+                <form action="" method="post">
+                    <div class="field">
+                    <label for="PrescriptionID">Prescription ID:</label><br>
+                    <input type="text" id="PrescriptionID" name="PrescriptionID" value="<?php echo $PrescriptionIDold?>" placeholder="Enter the prescription ID" required><br>
+                    </div>
 
-    <form action="" method="post">
-        <label for="PrescriptionID">Prescription ID:</label><br>
-        <input type="text" id="PrescriptionID" name="PrescriptionID" value="<?php echo $PrescriptionIDold?>" placeholder="Enter the prescription ID" required><br>
-        <label for="TradeName">Drug Trade Name:</label><br>
-        <?php 
-            $sql = "SELECT TradeName FROM Drugs";
-            $result = $conn-> query($sql);
-            
-        ?>
-        <select name="TradeName" id="TradeName">
-            <option value="<?php echo $TradeName?>" selected ><?php echo $TradeName?></option>
-            <?php
-                // use a while loop to fetch data
-                // from the $all_categories variable
-                // and individually display as an option
-                while ($category = mysqli_fetch_array(
-                        $result,MYSQLI_ASSOC)):;
-            ?>
-                <option value="<?php echo $category['TradeName'];
-                    // The value we usually set is the primary key
-                ?>">
-                    <?php echo $category['TradeName'];
-                        // To show the category name to the user
+                    <div class="field">
+                    <label for="TradeName">Drug Trade Name:</label><br>
+                    <?php 
+                        $sql = "SELECT TradeName FROM Drugs";
+                        $result = $conn-> query($sql);
+                        
                     ?>
-                </option>
-            <?php
-                endwhile;
-                // While loop must be terminated
-            ?>
-        </select><br>
-        <label for="Quantity">Quantity:</label><br>
-        <input type="text" name="Quantity" id="Quantity" value="<?php echo $Quantity?>" placeholder="Enter the quantity" required><br>
-        <label for="DoctorSSN">Doctor SSN:</label><br>
-        <input type="text" name="DoctorSSN" id="DoctorSSN" value="<?php echo $DoctorSSN?>" required><br>
-        <label for="PatientSSN">Patient SSN:</label><br>
-        <input type="text" name="PatientSSN" id="PatientSSN" value="<?php echo $PatientSSN?>" placeholder="Enter the patient's SSN" required><br>
-        <label for="Instructions">Instructions:</label><br>
-        <textarea name="Instructions" id="Instructions" cols="30" rows="10" placeholder="Enter prescriber's instructions"><?php echo $Instructions?></textarea><br>
-        <label for="PrescriptionDate">Date:</label><br>
-        <input type="date" name="PrescriptionDate" id="PrescriptionDate" value="<?php echo $PrescriptionDate?>" placeholder="Enter the date" required><br><br>
-        <input type="submit" value="Submit"><br><br>
-        <input type="reset" onclick="return confirm_reset();"><br><br>
-        <button onclick="return cancel()">Cancel</button>
-    </form>
+                    <select name="TradeName" id="TradeName">
+                        <option value="<?php echo $TradeName?>" selected ><?php echo $TradeName?></option>
+                        <?php
+                            // use a while loop to fetch data
+                            // from the $all_categories variable
+                            // and individually display as an option
+                            while ($category = mysqli_fetch_array(
+                                    $result,MYSQLI_ASSOC)):;
+                        ?>
+                            <option value="<?php echo $category['TradeName'];
+                                // The value we usually set is the primary key
+                            ?>">
+                                <?php echo $category['TradeName'];
+                                    // To show the category name to the user
+                                ?>
+                            </option>
+                        <?php
+                            endwhile;
+                            // While loop must be terminated
+                        ?>
+                    </select><br>
+                    </div>
+
+                    <div class="field">
+                    <label for="Quantity">Quantity:</label><br>
+                    <input type="text" name="Quantity" id="Quantity" value="<?php echo $Quantity?>" placeholder="Enter the quantity" required><br>
+                    </div>
+
+                    <div class="field">
+                    <label for="DoctorSSN">Doctor SSN:</label><br>
+                    <input type="text" name="DoctorSSN" id="DoctorSSN" value="<?php echo $DoctorSSN?>" required><br>
+                    </div>
+
+                    <div class="field">
+                    <label for="PatientSSN">Patient SSN:</label><br>
+                    <input type="text" name="PatientSSN" id="PatientSSN" value="<?php echo $PatientSSN?>" placeholder="Enter the patient's SSN" required><br>
+                    </div>
+
+                    <div class="field-txtarea">
+                    <label for="Instructions">Instructions:</label><br>
+                    <textarea name="Instructions" id="Instructions" cols="30" rows="10" placeholder="Enter prescriber's instructions"><?php echo $Instructions?></textarea><br>
+                    </div>
+
+                    <div class="field">
+                    <label for="PrescriptionDate">Date:</label><br>
+                    <input type="date" name="PrescriptionDate" id="PrescriptionDate" value="<?php echo $PrescriptionDate?>" placeholder="Enter the date" required><br><br>
+                    </div>
+                    <br>
+
+                    <input class="button" type="submit" value="Submit"><br><br>
+                    <input class="button" type="reset" onclick="return confirm_reset();"><br><br>
+                    <button class="button" onclick="return cancel()">Cancel</button>
+                </form>
+            </div>
+    </div>
 </body>
 </html>

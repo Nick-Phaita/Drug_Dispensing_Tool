@@ -50,22 +50,45 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Dispensation</title>
     <script type="text/javascript" src="../scripts.js"></script>
+    <link rel="stylesheet" type="text/css" href="../styles/form.css">
+    <link rel="stylesheet" type="text/css" href="../styles/style.css">
 </head>
 <body>
-    <h1>Edit Dispensation</h1>
+    <div class="form">
+    <div class="left-container">
+                        <div class="icon">
+                            <h2 class="logo">Dispenzer</h2>
+                        </div>
+                        <h1>Edit Dispensation</h1>
+             </div>
+    
+    <div class="right-container">
+            <form action="" method="post">
+                <div class="field">
+                <label for="DispensationID">Dispensation ID:</label><br>
+                <input type="text" id="DispensationID" name="DispensationID" value="<?php echo $DispensationIDold?>" placeholder="Enter dispensation ID" required><br>
+                </div>
 
-    <form action="" method="post">
-        <label for="DispensationID">Dispensation ID:</label><br>
-        <input type="text" id="DispensationID" name="DispensationID" value="<?php echo $DispensationIDold?>" placeholder="Enter dispensation ID" required><br>
-        <label for="PrescriptionID">Prescription ID:</label><br>
-        <input type="text" id="PrescriptionID" name="PrescriptionID" value="<?php echo $PrescriptionID?>" placeholder="Enter the prescription ID" required><br>
-        <label for="PharmacistSSN">Pharmacist SSN:</label><br>
-        <input type="number" name="PharmacistSSN" id="PharmacistSSN" value="<?php echo $PharmacistSSN?>" required><br>
-        <label for="DispensationDate">Date:</label><br>
-        <input type="date" name="DispensationDate" id="DispensationDate" value="<?php echo $DispensationDate?>" required><br><br>
-        <input type="submit" value="Submit"><br><br>
-        <input type="reset" onclick="return confirm_reset();"><br><br>
-        <button onclick="return cancel()">Cancel</button>
-    </form>
+                <div class="field">
+                <label for="PrescriptionID">Prescription ID:</label><br>
+                <input type="text" id="PrescriptionID" name="PrescriptionID" value="<?php echo $PrescriptionID?>" placeholder="Enter the prescription ID" required><br>
+                </div>
+
+                <div class="field">
+                <label for="PharmacistSSN">Pharmacist SSN:</label><br>
+                <input type="number" name="PharmacistSSN" id="PharmacistSSN" value="<?php echo $PharmacistSSN?>" required><br>
+                </div>
+
+                <div class="field">
+                <label for="DispensationDate">Date:</label><br>
+                <input type="date" name="DispensationDate" id="DispensationDate" value="<?php echo $DispensationDate?>" required><br><br>
+                </div>
+                <br>
+                <input class="button" type="submit" value="Submit"><br><br>
+                <input class="button" type="reset" onclick="return confirm_reset();"><br><br>
+                <button class="button" onclick="return cancel()">Cancel</button>
+            </form >    
+    </div>
+    </div>
 </body>
 </html>

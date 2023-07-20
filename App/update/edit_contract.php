@@ -53,29 +53,63 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Contract</title>
     <script type="text/javascript" src="../scripts.js"></script>
+    <link rel="stylesheet" type="text/css" href="../styles/form.css">
+    <link rel="stylesheet" type="text/css" href="../styles/style.css">
 </head>
 <body>
-    <h1>Edit Contract</h1>
+    <div class="form">
+    <div class="left-container">
+                        <div class="icon">
+                            <h2 class="logo">Dispenzer</h2>
+                        </div>
+                        <h1>Edit Contract</h1>
+             </div>
 
-    <form action="" method="post">
-        <label for="ContractID">Contract ID:</label><br>
-        <input type="text" id="ContractID" name="ContractID" value="<?php echo $ContractIDold?>" placeholder="Enter the contract ID" required><br>
-        <label for="ContractText">Contract Text:</label><br>
-        <textarea name="ContractText" id="ContractText" cols="30" rows="10" placeholder="Enter the contract text"><?php echo $ContractText?></textarea><br>
-        <label for="StartDate">Start Date:</label><br>
-        <input type="date" name="StartDate" id="StartDate" value="<?php echo $StartDate?>" required><br>
-        <label for="EndDate">End Date:</label><br>
-        <input type="date" name="EndDate" id="EndDate" value="<?php echo $EndDate?>" required><br>
-        <label for="CompanyID">Company ID:</label><br>
-        <input type="text" id="CompanyID" name="CompanyID" value="<?php echo $CompanyID?>" required><br>
-        <label for="PharmacyID">Pharmacy ID:</label><br>
-        <input type="text" id="PharmacyID" name="PharmacyID" value="<?php echo $PharmacyID?>" placeholder="Enter pharmacy ID" required><br>
-        <label for="SupervisorSSN">Supervisor SSN:</label><br>
-        <input type="number" id="SupervisorSSN" name="SupervisorSSN" value="<?php echo $SupervisorSSN?>" placeholder="Enter the supervisor's SSN" required><br><br>
-        <input type="submit" value="Submit"><br><br>
-        <input type="reset" onclick="return confirm_reset();"><br><br>
-        <button onclick="return cancel()">Cancel</button>
-        
-    </form>
+            <div class="right-container">
+
+            <form action="" method="post">
+                <div class="field">
+                <label for="ContractID">Contract ID:</label><br>
+                <input type="text" id="ContractID" name="ContractID" value="<?php echo $ContractIDold?>" placeholder="Enter the contract ID" required><br>
+                </div>
+
+                <div class="field-txtarea">
+                <label for="ContractText">Contract Text:</label><br>
+                <textarea name="ContractText" id="ContractText" cols="30" rows="10" placeholder="Enter the contract text"><?php echo $ContractText?></textarea><br>
+                </div>
+
+                <div class="field">
+                <label for="StartDate">Start Date:</label><br>
+                <input type="date" name="StartDate" id="StartDate" value="<?php echo $StartDate?>" required><br>
+                </div>
+
+                <div class="field">
+                <label for="EndDate">End Date:</label><br>
+                <input type="date" name="EndDate" id="EndDate" value="<?php echo $EndDate?>" required><br>
+                </div>
+
+                <div class="field">
+                <label for="CompanyID">Company ID:</label><br>
+                <input type="text" id="CompanyID" name="CompanyID" value="<?php echo $CompanyID?>" required><br>
+                </div>
+
+                <div class="field">
+                <label for="PharmacyID">Pharmacy ID:</label><br>
+                <input type="text" id="PharmacyID" name="PharmacyID" value="<?php echo $PharmacyID?>" placeholder="Enter pharmacy ID" required><br>
+                </div>
+
+                <div class="field">
+                <label for="SupervisorSSN">Supervisor SSN:</label><br>
+                <input type="number" id="SupervisorSSN" name="SupervisorSSN" value="<?php echo $SupervisorSSN?>" placeholder="Enter the supervisor's SSN" required><br><br>
+                </div>
+                <br>
+
+                <input class="button" type="submit" value="Submit"><br><br>
+                <input class="button" type="reset" onclick="return confirm_reset();"><br><br>
+                <button class="button" onclick="return cancel()">Cancel</button>
+                
+            </form>
+            </div>
+    </div>
 </body>
 </html>

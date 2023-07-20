@@ -44,22 +44,44 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Pharmacy</title>
     <script type="text/javascript" src="../scripts.js"></script>
+    <link rel="stylesheet" type="text/css" href="../styles/form.css">
+    <link rel="stylesheet" type="text/css" href="../styles/style.css">
 </head>
 <body>
-    <h1>Edit Pharmacy Details</h1>
+    <div class="form">
+         <div class="left-container">
+            <div class="icon">
+            <h2 class="logo">Dispenzer</h2>
+            </div>
+            <h1>Edit Pharmacy Details</h1>
+        </div>
+            <div class="right-container">
+                <form action="" method="post">
+                    <div class="field">
+                    <label for="PharmacyID">Pharmacy ID:</label><br>
+                    <input type="text" id="PharmacyID" name="PharmacyID" value='<?php echo $PharmacyIDold?>' placeholder="Enter pharmacy ID" required><br>
+                    </div>
 
-    <form action="" method="post">
-        <label for="PharmacyID">Pharmacy ID:</label><br>
-        <input type="text" id="PharmacyID" name="PharmacyID" value='<?php echo $PharmacyIDold?>' placeholder="Enter pharmacy ID" required><br>
-        <label for="PharmacyName">Pharmacy Name:</label><br>
-        <input type="text" id="PharmacyName" name="PharmacyName" value='<?php echo $PharmacyName?>' placeholder="Enter the name" required><br>
-        <label for="PharmacyAddress">Pharmacy Address:</label><br>
-        <input type="text" name="PharmacyAddress" id="PharmacyAddress" value='<?php echo $PharmacyAddress?>' placeholder="Enter your address" required><br>
-        <label for="PhoneNo">Phone Number:</label><br>
-        <input type="number" name="PhoneNo" id="PhoneNo" value='<?php echo $PhoneNo?>' placeholder="Enter Phone no." required><br><br>
-        <input type="submit" value="Submit"><br><br>
-        <input type="reset" onclick="return confirm_reset();"><br><br>
-        <button onclick="return cancel()">Cancel</button>
-    </form>
+                    <div class="field">
+                    <label for="PharmacyName">Pharmacy Name:</label><br>
+                    <input type="text" id="PharmacyName" name="PharmacyName" value='<?php echo $PharmacyName?>' placeholder="Enter the name" required><br>
+                    </div>
+
+                    <div class="field">
+                    <label for="PharmacyAddress">Pharmacy Address:</label><br>
+                    <input type="text" name="PharmacyAddress" id="PharmacyAddress" value='<?php echo $PharmacyAddress?>' placeholder="Enter your address" required><br>
+                    </div>
+
+                    <div class="field">
+                    <label for="PhoneNo">Phone Number:</label><br>
+                    <input type="number" name="PhoneNo" id="PhoneNo" value='<?php echo $PhoneNo?>' placeholder="Enter Phone no." required><br><br>
+                    </div>
+                    <br>
+                    <input class="button" type="submit" value="Submit"><br><br>
+                    <input class="button" type="reset" onclick="return confirm_reset();"><br><br>
+                    <button class="button" onclick="return cancel()">Cancel</button>
+                </form>
+            </div>
+    </div>
 </body>
 </html>

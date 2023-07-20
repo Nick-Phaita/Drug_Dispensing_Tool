@@ -47,24 +47,47 @@ if($_SERVER["REQUEST_METHOD"]== "POST"){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Pharmaceutical Company</title>
     <script type="text/javascript" src="../scripts.js"></script>
+    <link rel="stylesheet" type="text/css" href="../styles/form.css">
+    <link rel="stylesheet" type="text/css" href="../styles/style.css">
 </head>
 <body>
-    <h1>Edit Pharmaceutical Company Details</h1>
-    <form action="" method="post">
-        <label for="Username">Username: </label><br>
-        <input type="text" name="Username" id="Username" required value="<?php echo $Username?>" readonly><br>
-        <label for="CompanyID">Company ID:</label><br>
-        <input type="text" name="CompanyID" id="CompanyID" value="<?php echo $CompanyIDold?>" placeholder="Enter your company ID" required><br>
-        <label for="">Company Name:</label><br>
-        <input type="text" name="CompanyName" id="CompanyName" value="<?php echo $CompanyName?>" placeholder="Enter your company name" required><br>
-        <label for="">Phone No:</label><br>
-        <input type="text" name="PhoneNo" id="PhoneNo" value="<?php echo $PhoneNo?>" placeholder="Enter the company contact" required>
-        <br><br>
-        <input type="submit" name="Submit"><br><br>
-        <input type="reset" onclick="return confirm_reset();"><br><br>
-        <button onclick="return cancel()">Cancel</button>
+    <div class="form">
+        <div class="left-container">
+            <div class="icon">
+            <h2 class="logo">Dispenzer</h2>
+            </div>
+            <h1>Edit Pharmaceutical Company Details</h1>
+        </div>
+   <div class="right-container">
+                <form action="" method="post">
+                    <div class="field">
+                    <label for="Username">Username: </label><br>
+                    <input type="text" name="Username" id="Username" required value="<?php echo $Username?>" readonly><br>
+                    </div>
+
+                    <div class="field">
+                    <label for="CompanyID">Company ID:</label><br>
+                    <input type="text" name="CompanyID" id="CompanyID" value="<?php echo $CompanyIDold?>" placeholder="Enter your company ID" required><br>
+                    </div>
+
+                    <div class="field">
+                    <label for="">Company Name:</label><br>
+                    <input type="text" name="CompanyName" id="CompanyName" value="<?php echo $CompanyName?>" placeholder="Enter your company name" required><br>
+                    </div>
+
+                    <div class="field">
+                    <label for="">Phone No:</label><br>
+                    <input type="text" name="PhoneNo" id="PhoneNo" value="<?php echo $PhoneNo?>" placeholder="Enter the company contact" required>
+                    <br><br>
+                    </div>
+                    <br>
+                    <input class="button" type="submit" name="Submit"><br><br>
+                    <input class="button" type="reset" onclick="return confirm_reset();"><br><br>
+                    <button class="button"onclick="return cancel()">Cancel</button>
 
 
-    </form>
+                </form>
+            </div>
+    </div>
 </body>
 </html>
