@@ -1,6 +1,16 @@
 <?php
 require_once("../connection.php");
 session_start();
+
+if($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['SSN'])){
+    $PatientSSN = $_GET["SSN"];
+}else{
+    $PatientSSN = "";
+}
+
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -49,7 +59,7 @@ session_start();
         <label for="DoctorSSN">Doctor SSN:</label><br>
         <input type="text" name="DoctorSSN" id="DoctorSSN" value="<?php echo $_SESSION['SSN']?>" required readonly><br>
         <label for="PatientSSN">Patient SSN:</label><br>
-        <input type="text" name="PatientSSN" id="PatientSSN" placeholder="Enter the patient's SSN" required><br>
+        <input type="text" name="PatientSSN" id="PatientSSN" placeholder="Enter the patient's SSN" value="<?php echo $PatientSSN?>" required><br>
         <label for="Instructions">Instructions:</label><br>
         <textarea name="Instructions" id="Instructions" cols="30" rows="10" placeholder="Enter prescriber's instructions"></textarea><br>
         <label for="PrescriptionDate">Date:</label><br>
@@ -62,6 +72,8 @@ session_start();
 </html>
 
 <?php
+
+
 
 
 try{

@@ -27,7 +27,7 @@ if($result->num_rows > 0){
     </head>
     <body>
         <h1>Patients </h1>
-        <input type="text" onkeyup="searchTable()" class="search-input">
+        <input type="text" onkeyup="searchTable()" class="search-input" placeholder="Search...">
         <table style='border:1px solid black' class="table-view">
             <?php $attributes = $result->fetch_fields(); ?>
             <tr style='border:1px solid black'>
@@ -40,6 +40,8 @@ if($result->num_rows > 0){
                     <?php foreach($row as $data){ ?>
                     <td style='border:1px solid black'><?php echo $data ?></td>
                     <?php } ?> 
+                    <?php if($_SESSION['Usertype'] == "doctor"){ ?>
+                        <td><a href='/App/add/add_prescription.php?SSN=<?php echo $row["SSN"]?>'>Prescribe</a></td><?php }?>
                 </tr>
             <?php } ?>
         </table>
