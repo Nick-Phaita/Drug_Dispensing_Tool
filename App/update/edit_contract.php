@@ -73,6 +73,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <input type="text" id="ContractID" name="ContractID" value="<?php echo $ContractIDold?>" placeholder="Enter the contract ID" required><br>
                 </div>
 
+                <div class="field">
+                <label for="PharmacyID">Pharmacy ID:</label><br>
+                <input type="text" id="PharmacyID" name="PharmacyID" value="<?php echo $PharmacyID?>" placeholder="Enter pharmacy ID" required><br>
+                </div>
+
+                <div class="field">
+                <label for="SupervisorSSN">Supervisor SSN:</label><br>
+                <input type="number" id="SupervisorSSN" name="SupervisorSSN" value="<?php echo $SupervisorSSN?>" placeholder="Enter the supervisor's SSN" required><br>
+                </div>
+
                 <div class="field-txtarea">
                 <label for="ContractText">Contract Text:</label><br>
                 <textarea name="ContractText" id="ContractText" cols="30" rows="10" placeholder="Enter the contract text"><?php echo $ContractText?></textarea><br>
@@ -92,21 +102,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <label for="CompanyID">Company ID:</label><br>
                 <input type="text" id="CompanyID" name="CompanyID" value="<?php echo $CompanyID?>" required><br>
                 </div>
-
-                <div class="field">
-                <label for="PharmacyID">Pharmacy ID:</label><br>
-                <input type="text" id="PharmacyID" name="PharmacyID" value="<?php echo $PharmacyID?>" placeholder="Enter pharmacy ID" required><br>
-                </div>
-
-                <div class="field">
-                <label for="SupervisorSSN">Supervisor SSN:</label><br>
-                <input type="number" id="SupervisorSSN" name="SupervisorSSN" value="<?php echo $SupervisorSSN?>" placeholder="Enter the supervisor's SSN" required><br><br>
-                </div>
                 <br>
 
-                <input class="button" type="submit" value="Submit"><br><br>
-                <input class="button" type="reset" onclick="return confirm_reset();"><br><br>
-                <button class="button" onclick="return cancel()">Cancel</button>
+                <input class="button" type="submit" value="Submit">
+                <input class="button" type="reset" onclick="return confirm_reset();">
+                <input class="button" type="button" onclick="return cancel()" value="Cancel" >
                 
             </form>
             </div>

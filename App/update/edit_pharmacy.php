@@ -74,12 +74,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
                     <div class="field">
                     <label for="PhoneNo">Phone Number:</label><br>
-                    <input type="number" name="PhoneNo" id="PhoneNo" value='<?php echo $PhoneNo?>' placeholder="Enter Phone no." required><br><br>
+                    <input type="number" name="PhoneNo" id="PhoneNo" value='<?php echo $PhoneNo?>' placeholder="Enter Phone no." required><br>
                     </div>
                     <br>
-                    <input class="button" type="submit" value="Submit"><br><br>
-                    <input class="button" type="reset" onclick="return confirm_reset();"><br><br>
-                    <button class="button" onclick="return cancel()">Cancel</button>
+                    <input class="button" type="submit" value="Submit">
+                    <input class="button" type="reset" onclick="return confirm_reset();">
+                    <input class="button" type="button" onclick="return cancel()" value="Cancel" >
                 </form>
             </div>
     </div>

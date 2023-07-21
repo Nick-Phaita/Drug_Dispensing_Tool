@@ -81,12 +81,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
                 <div class="field">
                 <label for="DispensationDate">Date:</label><br>
-                <input type="date" name="DispensationDate" id="DispensationDate" value="<?php echo $DispensationDate?>" required><br><br>
+                <input type="date" name="DispensationDate" id="DispensationDate" value="<?php echo $DispensationDate?>" required><br>
                 </div>
                 <br>
-                <input class="button" type="submit" value="Submit"><br><br>
-                <input class="button" type="reset" onclick="return confirm_reset();"><br><br>
-                <button class="button" onclick="return cancel()">Cancel</button>
+                <input class="button" type="submit" value="Submit">
+                <input class="button" type="reset" onclick="return confirm_reset();">
+                <input class="button" type="button" onclick="return cancel()" value="Cancel" >
             </form >    
     </div>
     </div>

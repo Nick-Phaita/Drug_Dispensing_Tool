@@ -117,7 +117,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
                     <div class="field">
                     <label for="DoctorSSN">Doctor SSN:</label><br>
-                    <input type="text" name="DoctorSSN" id="DoctorSSN" value="<?php echo $DoctorSSN?>" required><br>
+                    <input type="text" name="DoctorSSN" id="DoctorSSN" value="<?php echo $DoctorSSN?>" readonly required><br>
                     </div>
 
                     <div class="field">
@@ -125,20 +125,22 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                     <input type="text" name="PatientSSN" id="PatientSSN" value="<?php echo $PatientSSN?>" placeholder="Enter the patient's SSN" required><br>
                     </div>
 
+                    <div class="field">
+                    <label for="PrescriptionDate">Date:</label><br>
+                    <input type="date" name="PrescriptionDate" id="PrescriptionDate" value="<?php echo $PrescriptionDate?>" placeholder="Enter the date" required><br>
+                    </div>
+
                     <div class="field-txtarea">
                     <label for="Instructions">Instructions:</label><br>
                     <textarea name="Instructions" id="Instructions" cols="30" rows="10" placeholder="Enter prescriber's instructions"><?php echo $Instructions?></textarea><br>
                     </div>
 
-                    <div class="field">
-                    <label for="PrescriptionDate">Date:</label><br>
-                    <input type="date" name="PrescriptionDate" id="PrescriptionDate" value="<?php echo $PrescriptionDate?>" placeholder="Enter the date" required><br><br>
-                    </div>
+
                     <br>
 
-                    <input class="button" type="submit" value="Submit"><br><br>
-                    <input class="button" type="reset" onclick="return confirm_reset();"><br><br>
-                    <button class="button" onclick="return cancel()">Cancel</button>
+                    <input class="button" type="submit" value="Submit">
+                    <input class="button" type="reset" onclick="return confirm_reset();">
+                    <input class="button" type="button" onclick="return cancel()" value="Cancel" >
                 </form>
             </div>
     </div>

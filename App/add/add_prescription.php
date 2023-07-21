@@ -83,15 +83,17 @@ if($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["SSN"])){
                     <input type="text" name="PatientSSN" id="PatientSSN" value="<?php echo $PatientSSN?>" placeholder="Enter the patient's SSN" required><br>
                     </div>
 
+                    <div class="field">
+                    <label for="PrescriptionDate">Date:</label><br>
+                    <input type="date" name="PrescriptionDate" id="PrescriptionDate" placeholder="Enter the date" required><br>
+                    </div>
+
                     <div class="field-txtarea">
                     <label for="Instructions">Instructions:</label><br>
                     <textarea name="Instructions" id="Instructions" cols="30" rows="10" placeholder="Enter prescriber's instructions"></textarea><br>
                     </div>
 
-                    <div class="field">
-                    <label for="PrescriptionDate">Date:</label><br>
-                    <input type="date" name="PrescriptionDate" id="PrescriptionDate" placeholder="Enter the date" required><br><br>
-                    </div>
+
 
                     <br>
                     <input class="button" type="submit" value="Submit">

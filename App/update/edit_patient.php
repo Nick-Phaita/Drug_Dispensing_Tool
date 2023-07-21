@@ -102,20 +102,21 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                             </select><br>
                             </div>
 
+                            <div class="field">
+                            <label for="HeightinCm">Height (in centimetres):</label><br>
+                            <input type="text" id="HeightinCm" name="HeightinCm" placeholder="Enter your height" value="<?php echo $HeightinCm?>" required><br>
+                            </div>
+                         
+                            <div class="field">
+                            <label for="WeightinKg">Weight (in kilograms):</label><br>
+                            <input type="text" id="WeightinKg" name="WeightinKg" placeholder="Enter your weight" value="<?php echo $WeightinKg?>" required><br>
+                            </div>
+
                             <div class="field-txtarea">
                             <label for="Allergies">Allergies:</label><br>
                             <textarea name="Allergies" id="Allergies" cols="20" rows="10" ><?php echo $Allergies?></textarea><br>
                             </div>
 
-                            <div class="field">
-                            <label for="HeightinCm">Height (in centimetres):</label><br>
-                            <input type="text" id="HeightinCm" name="HeightinCm" placeholder="Enter your height" value="<?php echo $HeightinCm?>" required><br>
-                            </div>
-
-                            <div class="field">
-                            <label for="WeightinKg">Weight (in kilograms):</label><br>
-                            <input type="text" id="WeightinKg" name="WeightinKg" placeholder="Enter your weight" value="<?php echo $WeightinKg?>" required><br>
-                            </div>
 
                             <div class="field">
                             <label for="PatientAddress">Address:</label><br>
@@ -132,9 +133,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                             <input type="text" id="PrimaryPhysicianSSN" name="PrimaryPhysicianSSN" value="<?php echo $PrimaryPhysicianSSN?>" required placeholder="Enter your physician's SSN"><br>
                             </div>
                             <br>
-                            <input class="button" type="submit" value="Submit"><br><br>
-                            <input class="button" type="reset" onclick="return confirm_reset();"><br><br>
-                            <button class="button" onclick="return cancel()">Cancel</button>
+                            <input class="button" type="submit" value="Submit">
+                            <input class="button" type="reset" onclick="return confirm_reset();">
+                            <input class="button" type="button" onclick="return cancel()" value="Cancel" >
                         </form>
                     </div>
         </div>

@@ -68,12 +68,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
                 <div class="field">
                 <label for="CompanyID">Company ID:</label><br>
-                <input type="text" name="CompanyID" id="CompanyID" value="<?php echo $CompanyID?>" required><br><br>
+                <input type="text" name="CompanyID" id="CompanyID" value="<?php echo $CompanyID?>" required><br>
                 </div>
                 <br>
-                <input class="button" type="submit" value="Submit"><br><br>
-                <input class="button" type="reset" onclick="return confirm_reset();"><br><br>
-                <button class="button" onclick="return cancel()">Cancel</button>
+                <input class="button" type="submit" value="Submit">
+                <input class="button" type="reset" onclick="return confirm_reset();">
+                <input class="button" type="button" onclick="return cancel()" value="Cancel" >
             </form>
         </div>  
     </div>

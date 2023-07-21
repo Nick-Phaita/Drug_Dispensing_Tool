@@ -99,13 +99,13 @@ if($_SERVER["REQUEST_METHOD"]== "POST"){
                             endwhile;
                             // While loop must be terminated
                         ?>
-                    </select><br><br>
+                    </select><br>
                     </div>
                     <br>
 
-                    <input class="button" type="submit" name="Submit"><br><br>
-                    <input class="button" type="reset" onclick="return confirm_reset();"><br><br>
-                    <button class="button" onclick="return cancel()">Cancel</button>
+                    <input class="button" type="submit" value="Submit">
+                    <input class="button" type="reset" onclick="return confirm_reset();">
+                    <input class="button" type="button" onclick="return cancel()" value="Cancel" >
 
 
                 </form>

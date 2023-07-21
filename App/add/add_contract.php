@@ -31,6 +31,17 @@ session_start();
                         <input type="text" id="ContractID" name="ContractID" placeholder="Enter the contract ID" required><br>
                         </div>
 
+                        <div class="field">
+                        <label for="PharmacyID">Pharmacy ID:</label><br>
+                        <input type="text" id="PharmacyID" name="PharmacyID" placeholder="Enter pharmacy ID" required><br>
+                        </div>
+
+                        <div class="field">
+                        <label for="SupervisorSSN">Supervisor SSN:</label><br>
+                        <input type="number" id="SupervisorSSN" name="SupervisorSSN" placeholder="Enter the supervisor's SSN" required><br>
+                        </div>
+                        <br>
+
                         <div class="field-txtarea">
                         <label for="ContractText">Contract Text:</label><br>
                         <textarea name="ContractText" id="ContractText" cols="30" rows="10" placeholder="Enter the contract text"></textarea><br>
@@ -51,16 +62,6 @@ session_start();
                         <input type="text" id="CompanyID" name="CompanyID" value="<?php echo $_SESSION['CompanyID']?>" readonly required><br>
                         </div>
 
-                        <div class="field">
-                        <label for="PharmacyID">Pharmacy ID:</label><br>
-                        <input type="text" id="PharmacyID" name="PharmacyID" placeholder="Enter pharmacy ID" required><br>
-                        </div>
-
-                        <div class="field">
-                        <label for="SupervisorSSN">Supervisor SSN:</label><br>
-                        <input type="number" id="SupervisorSSN" name="SupervisorSSN" placeholder="Enter the supervisor's SSN" required><br>
-                        </div>
-                        <br>
 
                         <input class="button" type="submit" value="Submit">
                         <input class="button" type="reset" onclick="return confirm_reset();">

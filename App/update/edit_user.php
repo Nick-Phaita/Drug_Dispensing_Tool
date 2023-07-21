@@ -94,7 +94,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 <form method="post" action="">
                     <div class="field">
                     <label for="Username">Username</label>
-                    <input type="text" name="Username" id="Username" value = "<?php echo $usernameOld;?>" required><br><br>
+                    <input type="text" name="Username" id="Username" value = "<?php echo $usernameOld;?>" required><br>
                     </div>
 
                     <div class="field">
@@ -106,17 +106,18 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                         <option value="pharmacist">Pharmacist</option>
                         <option value="supervisor">Supervisor</option>
                         <option value="pharmaceuticalcompany">Pharmaceutical Company</option>
-                    </select> <br><br>
+                    </select> <br>
                     </div>
 
                     <div class="field">
                     <label for="Password">Password</label>
                     <input type="password" name="Password" id="Password" value = "<?php echo $password;?> " required minlength="8"> <br>
                     </div>
+                    <br>
 
-                    <button class="button" type="submit" name="submit">Confirm</button><br><br>
-                    <input class="button" type="reset" onclick="return confirm_reset();"><br><br>
-                    <button class="button" onclick="return cancel()">Cancel</button>
+                    <input class="button" type="submit" value="Submit">
+                    <input class="button" type="reset" onclick="return confirm_reset();">
+                    <input class="button" type="button" onclick="return cancel()" value="Cancel" >
                 </form>
         </div>
         </div>
