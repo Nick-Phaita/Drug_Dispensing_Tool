@@ -9,45 +9,84 @@ $SSN = $_SESSION['SSN'];
 
 $sqlretrieve = "SELECT CompanyID, CompanyName, PhoneNo FROM PharmaCo";
 
+require_once("../pagination.php");
+
 $result = $conn->query($sqlretrieve);
+$number_of_result = mysqli_num_rows($result); 
+$number_of_page = ceil ($number_of_result / $results_per_page); 
+
+ 
+$query = $sqlretrieve ." LIMIT " . $page_first_result . ',' . $results_per_page;  
+$result = mysqli_query($conn, $query); 
 
 if($_SESSION['Usertype']=='supervisor'){
-    echo '<a href="../dashboards/supervisor_dashboard.php">Back to Dashboard</a>';
+    echo '<a class="back-to-dash" href="../dashboards/supervisor_dashboard.php">Back to Dashboard</a>';
 }
-
-if($result->num_rows > 0){
     ?>
     
     <!DOCTYPE html>
     <html>
     <head>
-
+        <title>Pharmaceutical Companys Table</title>
+        <link rel="stylesheet" href="../styles/view.css">
+        <link rel="stylesheet" href="../styles/style.css">
     </head>
     <body>
         <h1>Pharmaceutical Companies </h1>
-        <input type="text" onkeyup="searchTable()" class="search-input" placeholder="Search...">
-        <table style='border:1px solid black' class='table-view'>
-            <?php $attributes = $result->fetch_fields(); ?>
-            <tr style='border:1px solid black'>
-                <?php foreach($attributes as $field){?>
-                <th style='border:1px solid black'><?php echo $field->name ?></th>
-                 <?php } ?> 
-            </tr>
-            <?php while($row = $result->fetch_assoc()){ ?>
-                <tr>
-                    <?php foreach($row as $data){ ?>
-                    <td style='border:1px solid black'><?php echo $data ?></td>
-                    <?php } ?> 
-                </tr>
-            <?php } ?>
-        </table>
-    <?php }else {
-        echo "<br>No results";
-        } ?>
+        <hr>
 
-    <?php $conn->close();?>
+        <?php if($result->num_rows > 0){?>
+        <div class="search_Input">
+            <input type="text" onkeyup="searchTable()" class="search-input" placeholder="Search...">
+        </div>
 
-    <script type="text/javascript" src="../scripts.js"></script>
+        <div class="overflow">
+            <table class="table-view">
+                <?php $attributes = $result->fetch_fields(); ?>
+                <thead>
+                    <tr>
+                        <?php foreach($attributes as $field){?>
+                        <th><?php echo $field->name ?></th>
+                        <?php } ?> 
+                        <th></th>
+                    </tr>
+                </thead>
+            
+                <tbody>
+                    <?php while($row = $result->fetch_assoc()){ ?>
+                        <tr>
+                            <?php foreach($row as $data){ ?>
+                            <td><?php echo $data ?></td>
+                            <?php } ?> 
+                        </tr>
+                    <?php } ?>
+
+                </tbody>
+            
+            </table>
+        </div>
+
+        <div class="pages">
+            <?php 
+            //display the link of the pages in URL  
+        
+            for($page = 1; $page<= $number_of_page; $page++) {  
+            echo '<a class="page" href = "view_pharmacos.php?page=' . $page . '">' . $page . ' </a> ';  
+        
+            }  
+    
+        ?>
+        </div>
+        
+        
+        <?php }else {
+            echo "<p class='empty-view'>No results found</p>";
+            } ?>
+
+        <?php $conn->close();?>
+
+        <script type="text/javascript" src="../scripts.js"></script>
         
     </body>
 </html>
+    

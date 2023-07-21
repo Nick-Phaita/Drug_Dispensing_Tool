@@ -1,0 +1,133 @@
+h1{
+    font-size: 40px;
+    text-align: center;
+    font-family: arial;
+    margin-bottom: 30px;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: rgb(185 188 191 / 20%) 0px 0px 24px 5px;
+    border-radius: 5px;
+    font-family: arial;
+    table-layout: fixed;
+    overflow: auto;
+}
+
+th{
+    padding: .625em;
+    text-align: left;
+    background-color: #f3f3f5;
+    font-size: .7em;
+    text-align: left;
+    letter-spacing: .1em;
+}
+
+td{
+    padding: .625em;
+    border-bottom: 1px solid #eee;
+    
+    font-size: .85em;
+    text-align: left;
+    letter-spacing: .1em;
+}
+
+/*.action{
+    display: flex;
+}*/
+
+.action a{
+    margin-right: 10px;
+    cursor: pointer;
+    background-color: black;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 2px;
+    text-decoration: none;
+    color: white;
+}
+
+.action a:hover{
+    background-color: #06a6f6;
+}
+
+
+.action a:last-child{
+    margin-right: 0;
+}
+
+tbody{
+    overflow: auto;
+}
+
+.overflow{
+    overflow-x: auto;
+}
+
+.search_Input{
+    text-align: left;
+    margin: 10px;
+}
+
+.search-input{
+    height: 40px;
+    
+}
+
+.search-input:focus{
+    width: 100%;
+    
+}
+
+.pages{
+    margin-top: 20px;
+    text-align: center;
+}
+
+a.page{
+    text-decoration: none;
+    border: 1px solid;
+    color: black;
+    padding: 10px 18px;
+}
+
+a.page:hover{
+    background-color: aqua;
+}
+
+.currentPage{
+    position: fixed;
+    font-size: 20px;
+    top: 90%;
+    left: 48%;
+    margin: 0 auto;
+}
+
+.back-to-dash{
+    text-decoration: none;
+    background-color: #070404;
+    color: white;
+    font-family: Arial;
+    font-weight: bold;
+    transition: 0.4s ease-in-out;
+    font-size: 20px;
+    position: relative;
+    top: 20px;
+    margin-left: 20px;
+    border: 2px black solid;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.back-to-dash:hover{
+    color: #06a6f6;
+    background-color: white;
+}
+
+p.empty-view{
+    font-size: 20px;
+    position: relative;
+    left: 45%;
+}
