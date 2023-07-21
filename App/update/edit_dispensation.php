@@ -71,12 +71,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
                 <div class="field">
                 <label for="PrescriptionID">Prescription ID:</label><br>
-                <input type="text" id="PrescriptionID" name="PrescriptionID" value="<?php echo $PrescriptionID?>" placeholder="Enter the prescription ID" required><br>
+                <input type="text" id="PrescriptionID" name="PrescriptionID" value="<?php echo $PrescriptionID?>" readonly placeholder="Enter the prescription ID" required><br>
                 </div>
 
                 <div class="field">
                 <label for="PharmacistSSN">Pharmacist SSN:</label><br>
-                <input type="number" name="PharmacistSSN" id="PharmacistSSN" value="<?php echo $PharmacistSSN?>" required><br>
+                <input type="number" name="PharmacistSSN" id="PharmacistSSN" value="<?php echo $PharmacistSSN?>" readonly required><br>
                 </div>
 
                 <div class="field">
