@@ -35,6 +35,7 @@ if (isset( $_SESSION['loggedin'])) {
                     <li><a href="../add/add_pharmacy.php">Add pharmacy</a></li>
                     <li><a href="../view/view_users.php">View Users</a></li>
                     <li><a href="../signout.php">Sign Out</a></li>
+                    <li><a href="../delete.php" onclick="return confirm('Are you sure you want to delete your account?')">Delete User</a></li>
                 </ul>
     
             </div>

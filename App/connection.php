@@ -359,5 +359,14 @@ if($conn->query($sql) === TRUE){
 
  /*ALTER TABLE `contracts` DROP FOREIGN KEY `contracts_ibfk_1`; ALTER TABLE `contracts` ADD CONSTRAINT `contracts_ibfk_1` FOREIGN KEY (`CompanyID`) REFERENCES `pharmaco`(`CompanyID`) ON DELETE CASCADE ON UPDATE CASCADE; ALTER TABLE `contracts` DROP FOREIGN KEY `contracts_ibfk_2`; ALTER TABLE `contracts` ADD CONSTRAINT `contracts_ibfk_2` FOREIGN KEY (`PharmacyID`) REFERENCES `pharmacy`(`PharmacyID`) ON DELETE CASCADE ON UPDATE CASCADE; ALTER TABLE `contracts` DROP FOREIGN KEY `contracts_ibfk_3`; ALTER TABLE `contracts` ADD CONSTRAINT `contracts_ibfk_3` FOREIGN KEY (`SupervisorSSN`) REFERENCES `supervisor`(`SSN`) ON DELETE CASCADE ON UPDATE CASCADE; */
 
+ /*ALTER TABLE Patients
+MODIFY COLUMN PrimaryPhysicianSSN int NULL; */
+
+/*ALTER TABLE `patients` DROP FOREIGN KEY `patients_ibfk_2`; ALTER TABLE `patients` ADD CONSTRAINT `patients_ibfk_2` FOREIGN KEY (`PrimaryPhysicianSSN`) REFERENCES `doctors`(`SSN`) ON DELETE SET NULL ON UPDATE CASCADE;*/
  
+/*ALTER TABLE `contracts` DROP FOREIGN KEY `contracts_ibfk_3`; ALTER TABLE `contracts` ADD CONSTRAINT `contracts_ibfk_3` FOREIGN KEY (`SupervisorSSN`) REFERENCES `supervisor`(`SSN`) ON DELETE RESTRICT ON UPDATE CASCADE; */
+
+/*ALTER TABLE `dispensations` DROP FOREIGN KEY `dispensations_ibfk_2`; ALTER TABLE `dispensations` ADD CONSTRAINT `dispensations_ibfk_2` FOREIGN KEY (`PharmacistSSN`) REFERENCES `pharmacist`(`SSN`) ON DELETE RESTRICT ON UPDATE CASCADE;*/
+
+/*ALTER TABLE `prescriptions` DROP FOREIGN KEY `prescriptions_ibfk_2`; ALTER TABLE `prescriptions` ADD CONSTRAINT `prescriptions_ibfk_2` FOREIGN KEY (`DoctorSSN`) REFERENCES `doctors`(`SSN`) ON DELETE RESTRICT ON UPDATE CASCADE; ALTER TABLE `prescriptions` DROP FOREIGN KEY `prescriptions_ibfk_3`; ALTER TABLE `prescriptions` ADD CONSTRAINT `prescriptions_ibfk_3` FOREIGN KEY (`PatientSSN`) REFERENCES `patients`(`SSN`) ON DELETE RESTRICT ON UPDATE CASCADE; */
 ?>
