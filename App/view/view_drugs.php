@@ -12,7 +12,7 @@ $sqlretrieve = "";
 
 if($_SESSION['Usertype'] == "supervisor"){
     $title = "All Drugs In Supply";
-    $sqlretrieve = "SELECT * FROM Drugs;";
+    $sqlretrieve = "SELECT * FROM Drugs";
 }
 
 if($_SESSION['Usertype'] == "pharmaceuticalcompany"){
