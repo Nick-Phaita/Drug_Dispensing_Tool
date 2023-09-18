@@ -18,6 +18,7 @@
         </a>
         <section class="login-form">
             <h1>Login</h1>
+            <h3 id="message"> Registered successfully</h3>
             <form action="login.php" method="post">
                 <div class="user-box">
                     <input type="text" name="username" id="username" required>
@@ -38,3 +39,9 @@
         
     </body>
 </html>
+<script>
+    setTimeout(function(){
+var msg=document.getElementById("message");
+msg.parentNode.removeChild(msg);
+}, 1000);
+    </script>

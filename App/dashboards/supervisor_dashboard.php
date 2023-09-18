@@ -31,8 +31,15 @@ if (isset( $_SESSION['loggedin'])) {
             </div>
 
             <h2>Supervisor Dashboard</h2>
+            <h2 id="logmsg"><?php echo $_SESSION['mmsg'];
+            $_SESSION['mmsg']="";
+             ?></h2>
         </div>
-
+        <script>
+            setTimeout(function(){
+                var msg=document.getElementById("logmsg");
+                msg.parentNode.removeChild(msg);
+            }, 2000);</script>
         <hr>
 
         <div class="main">
