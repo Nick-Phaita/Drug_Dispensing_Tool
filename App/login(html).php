@@ -18,7 +18,11 @@
         </a>
         <section class="login-form">
             <h1>Login</h1>
-            <h3 id="message"> Registered successfully</h3>
+            <div id="successmmsg">
+            <h3 id="message"><?php session_start();
+             echo $_SESSION['sccmmsg'];
+            $_SESSION['sccmmsg']=""?></h3>
+            </div>
             <form action="login.php" method="post">
                 <div class="user-box">
                     <input type="text" name="username" id="username" required>

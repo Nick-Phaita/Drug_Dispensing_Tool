@@ -24,9 +24,11 @@ if (isset( $_SESSION['loggedin'])) {
             </div>
 
             <h2>Patient Dashboard</h2>
-            <h2 id="logmsg"><?php echo $_SESSION['mmsg'];
-            $_SESSION['mmsg']="";
-             ?></h2>
+            <div id="successmmsg">
+                <h2 id="logmsg"><?php echo $_SESSION['sccmmsg'];
+                $_SESSION['sccmmsg']="";
+                 ?></h2>
+            </div>
         </div>
         <script>
             setTimeout(function(){
@@ -92,7 +94,7 @@ if (isset( $_SESSION['loggedin'])) {
 
 <?php 
 }else{
-    header("Location: /App/login.html");
+    header("Location: /App/login(html).php");
     exit();
 }
 ?>

@@ -75,7 +75,7 @@ if (isset( $_SESSION['loggedin'])) {
 
 <?php 
 }else{
-    header("Location: /App/login.html");
+    header("Location: /App/login(html).php");
     exit();
 }
 ?>

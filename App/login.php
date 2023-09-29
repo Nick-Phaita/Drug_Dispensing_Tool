@@ -40,7 +40,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 $_SESSION['Names'] = $row['Names'];
                 $_SESSION['SSN'] = $row['SSN'];
                 $_SESSION['Username'] = $row['Username'];
-                $_SESSION['mmsg']="Patient logged successfully";
+                $_SESSION['sccmmsg']="Patient logged successfully";
                 header("Location: dashboards/patient_dashboard.php");
             }
             if($usertype == "doctor"){
@@ -50,7 +50,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 $_SESSION['Names'] = $row['Names'];
                 $_SESSION['SSN'] = $row['SSN'];
                 $_SESSION['Username'] = $row['Username'];
-                $_SESSION['mmsg']="Doctor logged in successfully";
+                $_SESSION['sccmmsg']="Doctor logged in successfully";
                 header("Location: dashboards/doctor_dashboard.php");
             }
             if($usertype == "pharmacist"){
@@ -60,7 +60,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 $_SESSION['Names'] = $row['Names'];
                 $_SESSION['SSN'] = $row['SSN'];
                 $_SESSION['Username'] = $row['Username'];
-                $_SESSION['mmsg']="Pharmacist logged in successfully";
+                $_SESSION['sccmmsg']="Pharmacist logged in successfully";
                 header("Location: dashboards/pharmacist_dashboard.php");
             }
             if($usertype == "supervisor"){
@@ -70,7 +70,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 $_SESSION['Names'] = $row['Names'];
                 $_SESSION['SSN'] = $row['SSN'];
                 $_SESSION['Username'] = $row['Username'];
-                $_SESSION['mmsg']="Supervisor logged in successfully";
+                $_SESSION['sccmmsg']="Supervisor logged in successfully";
                 header("Location: dashboards/supervisor_dashboard.php");
             }
             if($usertype == "pharmaceuticalcompany"){
@@ -79,7 +79,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 $row = mysqli_fetch_assoc($result);
                 $_SESSION['Names'] = $row['CompanyName'];
                 $_SESSION['Username'] = $row['Username'];
-                $_SESSION['mmsg']="Pharmaceitcal company logged in successfully";
+                $_SESSION['sccmmsg']="Pharmaceitcal company logged in successfully";
                 header("Location: dashboards/pharmaco_dashboard.php");
             }
             if($usertype == "admin"){

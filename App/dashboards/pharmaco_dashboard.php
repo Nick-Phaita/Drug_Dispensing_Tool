@@ -33,8 +33,8 @@ if (isset( $_SESSION['loggedin'])) {
             </div>
 
             <h2>Pharmaceutical Company Dashboard</h2>
-            <h2 id="logmsg"><?php echo $_SESSION['mmsg'];
-            $_SESSION['mmsg']="";
+            <h2 id="logmsg"><?php echo $_SESSION['sccmmsg'];
+            $_SESSION['sccmmsg']="";
              ?></h2>
         </div>
         <script>
@@ -122,7 +122,7 @@ if (isset( $_SESSION['loggedin'])) {
 
 <?php 
 }else{
-    header("Location: /App/login.html");
+    header("Location: /App/login(html).php");
     exit();
 }
 ?>

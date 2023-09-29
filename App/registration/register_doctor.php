@@ -17,14 +17,15 @@ try{
     if($conn->query($sql) === TRUE) {
         echo 
         "<script>alert('Data inserted successfully')</script>";
-        header("Location: ../login.html ");
+        header("Location: ../login(html).php ");
     }else {
         echo "Error: ".$sql."<br>".$conn->error;
     }}
     }catch(Exception){
         echo "<script>alert('Duplicate SSN entered')</script>";
     }
-
+    session_start();
+    $_SESSION['sccmmsg']="Doctor Registered successfully";
 //$conn->close();
 
 ?>
