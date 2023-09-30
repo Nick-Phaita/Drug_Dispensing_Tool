@@ -83,10 +83,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 header("Location: dashboards/pharmaco_dashboard.php");
             }
             if($usertype == "admin"){
-                $sql = "SELECT * FROM Users WHERE Username='$username'";
+                $sql = "SELECT * FROM Admins WHERE Username='$username'";
                 $result = mysqli_query($conn, $sql);
                 $row = mysqli_fetch_assoc($result);
                 $_SESSION['Username'] = $row['Username'];
+                $_SESSION['Names'] = $row['Names'];
+                $_SESSION['sccmmsg']="Administrator logged in successfully";
                 header("Location: dashboards/admin_dashboard.php");
             }
 

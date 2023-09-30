@@ -19,11 +19,20 @@ if (isset( $_SESSION['loggedin'])) {
             </div>
 
             <div class="greetings">
-               <h1>Hello, Administrator</h1>
+                <h1><?php echo $_SESSION['Username']; ?></h1>
+                <h3>Hello, <?php echo $_SESSION['Names']?></h3>
             </div>
 
             <h2>Administrator Dashboard</h2>
+            <h2 id="logmsg"><?php echo $_SESSION['sccmmsg'];
+            $_SESSION['sccmmsg']="";
+             ?></h2>
         </div>
+        <script>
+            setTimeout(function(){
+                var msg=document.getElementById("logmsg");
+                msg.parentNode.removeChild(msg);
+            }, 2000);</script>
 
         <hr>
 
