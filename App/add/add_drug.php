@@ -22,7 +22,7 @@ session_start();
                                 </div>
                                 <h1>Add Drug</h1>
                     </div>
-    <form action="" method="post">
+    <form action="" method="post" enctype="multipart/form-data">
         <div class="field">
         <label for="TradeName">Drug Trade Name:</label><br>
         <input type="text" id="TradeName" name="TradeName" placeholder="Enter the drug trade name" required><br>
@@ -36,6 +36,21 @@ session_start();
         <div class="field">
         <label for="CompanyID">Company ID:</label><br>
         <input type="text" name="CompanyID" id="CompanyID" value="<?php echo $_SESSION['CompanyID']?>" readonly required><br>
+        </div>
+
+        <div class="field">
+        <label for="Category">Category</label>
+        <select name="Category" id="Category">
+            <option value="" selected hidden>Select the drug</option>
+            <option value="Anasthetic">Anasthetic</option>
+            <option value="Narcotics">Narcotics</option>
+            <option value="Painkillers">Painkillers</option>
+        </select>
+        </div>
+        
+
+        <div class="field">
+        <input type="file" name="file" >
         </div>
         <br>
 
@@ -56,11 +71,18 @@ try{
         $TradeName = $_POST["TradeName"];
         $Formula = $_POST["Formula"];
         $CompanyID = $_POST["CompanyID"];
+        $Category = $_POST["Category"];
+
+        $filename=$_FILES["file"]["name"];
+        $tempname=$_FILES["file"]["tmp_name"];
+        $filedestination='../dimage/'.$filename;
+
+        move_uploaded_file($tempname,$filedestination);
         
         
 
-       $sql="INSERT INTO Drugs (TradeName, Formula, CompanyID) 
-       VALUES ('$TradeName', '$Formula', '$CompanyID')";
+       $sql="INSERT INTO Drugs (TradeName, Formula, CompanyID, dcategory, folder) 
+       VALUES ('$TradeName', '$Formula', '$CompanyID','$Category','$filedestination')";
 
 if($conn->query($sql) === TRUE) {
     echo 
