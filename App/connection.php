@@ -35,6 +35,34 @@ if($conn->query($sql) === TRUE){
     echo "Error creating table: " .$conn->error;
 }*/
 
+/*$sql = "CREATE TABLE Admins (
+    Username VARCHAR(30) PRIMARY KEY,
+    Names VARCHAR(50) NOT NULL,
+    EmailAddress VARCHAR(100) NOT NULL UNIQUE,
+    PhoneNo VARCHAR(15) NOT NULL UNIQUE
+)";
+
+if($conn->query($sql) === TRUE){
+    echo "Admins Table created successfully";
+}else {
+    echo "Error creating table: " .$conn->error;
+}*/
+
+/*$sql = "ALTER TABLE Admins 
+    ADD FOREIGN KEY (Username) REFERENCES Users (Username)";
+
+if($conn->query($sql) === TRUE){
+    echo "Username is now a foreign key";
+}else {
+    echo "Error: " .$conn->error;
+};*/
+
+/*ALTER TABLE `admins` DROP FOREIGN KEY `admins_ibfk_1`; ALTER TABLE `admins`
+ ADD CONSTRAINT `admins_ibfk_1` FOREIGN KEY (`Username`) REFERENCES `users`(`Username`)
+  ON DELETE CASCADE ON UPDATE CASCADE;*/
+
+
+
 // uncomment to create table
 /*$sql = "CREATE TABLE Patients (
     SSN INT(9) UNSIGNED PRIMARY KEY,

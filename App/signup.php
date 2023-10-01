@@ -25,7 +25,7 @@ try{
             }elseif($usertype == "pharmaceuticalcompany"){
             header("Location: registration/registerPharmaco.php");
             }elseif($usertype == "admin"){
-                header("Location: login.html");
+                header("Location: registration/registerAdmin.php");
             }else {
         echo "Error: ".$sql."<br>".$conn->error;
             }
