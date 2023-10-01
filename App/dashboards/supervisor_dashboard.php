@@ -53,6 +53,7 @@ if (isset( $_SESSION['loggedin'])) {
                     <li><a href="../view/view_inventory.php">View inventory</a></li>
                     <li><a href="../view/view_contracts.php">View Contract</a></li>
                     <li><a href="../view/view_drugs.php">View Drugs</a></li>
+                    <li><a href="../view/display_drugs.php">Display Drugs</a></li>
                     <li><a href="../view/view_supervisors.php">View Supervisors</a></li>
                     <li><a href="../view/view_pharmacos.php">View Pharmaceutical Companies</a></li>
                     <li><a href="../view/view_pharmacists.php">View Pharmacists</a></li>

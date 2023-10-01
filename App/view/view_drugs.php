@@ -12,7 +12,7 @@ $sqlretrieve = "";
 
 if($_SESSION['Usertype'] == "supervisor"){
     $title = "All Drugs In Supply";
-    $sqlretrieve = "SELECT * FROM Drugs";
+    $sqlretrieve = "SELECT TradeName, Formula, CompanyID, dcategory FROM Drugs";
 }
 
 if($_SESSION['Usertype'] == "pharmaceuticalcompany"){
@@ -21,7 +21,7 @@ if($_SESSION['Usertype'] == "pharmaceuticalcompany"){
     $result = mysqli_query($conn, $sql);
     $row=$result->fetch_assoc();
     $CompanyID = $row['CompanyID'];
-    $sqlretrieve = "SELECT * FROM Drugs WHERE CompanyID='$CompanyID'";
+    $sqlretrieve = "SELECT TradeName, Formula, CompanyID, dcategory FROM Drugs WHERE CompanyID='$CompanyID'";
 }
 
 require_once("../pagination.php");
