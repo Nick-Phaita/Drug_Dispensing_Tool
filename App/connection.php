@@ -223,6 +223,9 @@ if($conn->query($sql) === TRUE){
     echo "Error: " .$conn->error;
 };*/
 
+/*$sql = "ALTER TABLE `drugs` ADD `dcategory` TEXT NOT NULL AFTER `CompanyID`,
+ ADD `folder` VARCHAR(150) NOT NULL AFTER `dcategory`;"*/
+
 /*$sql="CREATE TABLE Inventory (
     PharmacyID VARCHAR (10),
     TradeName VARCHAR (30),
