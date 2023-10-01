@@ -18,7 +18,7 @@
         </a>
         <section class="login-form">
             <h1>Login</h1>
-            <div id="successmmsg">
+            <div class="successmmsg">
             <h3 id="message"><?php session_start();
              echo $_SESSION['sccmmsg'];
             $_SESSION['sccmmsg']=""?></h3>

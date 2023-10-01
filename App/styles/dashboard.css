@@ -31,7 +31,7 @@ body{
     overflow: hidden;
     transition: all 0.3s ease-in;
     width: 15em;
-    height: 550px;
+    height: 600px;
     background: black;
     font-size: 1.2em;
 }
