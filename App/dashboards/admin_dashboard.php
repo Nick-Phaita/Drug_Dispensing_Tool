@@ -42,7 +42,13 @@ if (isset( $_SESSION['loggedin'])) {
                 <ul>
                     <li><a href="../update/edit_user.php">Edit Profile</a></li>
                     <li><a href="../add/add_pharmacy.php">Add pharmacy</a></li>
+                    <li><a href="../signup.html" onclick="return confirm('Are you sure you want to do this? You will be signed out')">Add User</a></li>
                     <li><a href="../view/view_users.php">View Users</a></li>
+                    <li><a href="../view/view_api_users.php">View API Users</a></li>
+                    <li><a href="../add/add_drug.php">Add Drug</a></li>
+                    <li><a href="../view/view_drugs.php">View Drugs</a></li>
+                    <li><a href="../add/add_drug_category.php">Add Drug Category</a></li>
+                    <li><a href="../view/view_drug_categories.php">View Drug Categories</a></li>
                     <li><a href="../signout.php">Sign Out</a></li>
                     <li><a href="../delete.php" onclick="return confirm('Are you sure you want to delete your account?')">Delete User</a></li>
                 </ul>

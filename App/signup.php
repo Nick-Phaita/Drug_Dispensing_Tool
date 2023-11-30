@@ -32,8 +32,12 @@ try{
         }
     }
 }catch(Exception){
-
-    header("Location: signup.html");
+    if($_SESSION['Usertype'] == "admin"){
+        header("Location: dashboards/admin_dashboard.php");
+    }else{
+        header("Location: signup.html");
+    }
+    
 
     echo "<script>alert('Error')</script>";
 

@@ -28,6 +28,9 @@ if (isset( $_SESSION['loggedin'])) {
                 <h2 id="logmsg"><?php echo $_SESSION['sccmmsg'];
                 $_SESSION['sccmmsg']="";
                  ?></h2>
+                 <h2 id="log"><?php echo $_SESSION['now'];
+                $_SESSION['sccmmsg']="";
+                 ?></h2>
             </div>
         </div>
         <script>

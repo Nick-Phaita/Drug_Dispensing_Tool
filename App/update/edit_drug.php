@@ -5,6 +5,7 @@ session_start();
 $TradeNameOld = $TradeNameNew = "";
 $Formula = "";
 $CompanyID = "";
+$Category = "";
 
 $TradeNameOld = $_GET["TradeName"];
 $sql="SELECT * FROM Drugs WHERE TradeName='$TradeNameOld'";
@@ -14,14 +15,16 @@ $row=$result->fetch_assoc();
 $TradeNameOld = $row["TradeName"];
 $Formula = $row["Formula"];
 $CompanyID = $row["CompanyID"];
+$Category = $row["dcategory"];
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     $TradeNameNew = $_POST["TradeName"];
     $Formula = $_POST["Formula"];
     $CompanyID = $_POST["CompanyID"];
+    $Category = $_POST["Category"];
 
     $sql="UPDATE Drugs SET TradeName='$TradeNameNew', Formula = '$Formula',
-        CompanyID = '$CompanyID' WHERE TradeName='$TradeNameOld'";
+        CompanyID = '$CompanyID', dcategory = '$Category' WHERE TradeName='$TradeNameOld'";
 
     $result = mysqli_query($conn, $sql);
         
@@ -70,6 +73,33 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <label for="CompanyID">Company ID:</label><br>
                 <input type="text" name="CompanyID" id="CompanyID" value="<?php echo $CompanyID?>" required><br>
                 </div>
+
+                <div class="field">
+        <label for="Category">Category</label>
+        <?php 
+            $sql = "SELECT cname FROM dcategory";
+            $result = $conn-> query($sql);    
+            ?>
+            <select name="Category" id="Category">
+            <option value="<?php echo $Category?>" selected hidden><?php echo $Category?></option>
+                        <?php
+                            while ($category = mysqli_fetch_array(
+                                    $result,MYSQLI_ASSOC)):;
+                        ?>
+                            <option value="<?php echo $category['cname'];
+                                // The value we usually set is the primary key
+                            ?>">
+                                <?php echo $category['cname'];
+                                    // To show the category name to the user
+                                ?>
+                            </option>
+                        <?php
+                            endwhile;
+                            // While loop must be terminated
+                        ?>
+                    </select><br>
+        </div>
+
                 <br>
                 <input class="button" type="submit" value="Submit">
                 <input class="button" type="reset" onclick="return confirm_reset();">

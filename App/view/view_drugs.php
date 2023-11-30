@@ -10,7 +10,7 @@ $Username = $_SESSION['Username'];
 
 $sqlretrieve = "";
 
-if($_SESSION['Usertype'] == "supervisor"){
+if($_SESSION['Usertype'] == "supervisor" || $_SESSION['Usertype'] == "admin"){
     $title = "All Drugs In Supply";
     $sqlretrieve = "SELECT TradeName, Formula, CompanyID, dcategory FROM Drugs";
 }
@@ -38,6 +38,8 @@ if($_SESSION['Usertype']== 'pharmaceuticalcompany'){
     echo '<a class="back-to-dash" href="../dashboards/pharmaco_dashboard.php">Back to Dashboard</a>';
 }elseif($_SESSION['Usertype']=='supervisor'){
     echo '<a class="back-to-dash" href="../dashboards/supervisor_dashboard.php">Back to Dashboard</a>';
+}elseif($_SESSION['Usertype']=='admin'){
+    echo '<a class="back-to-dash" href="../dashboards/admin_dashboard.php">Back to Dashboard</a>';
 }
     ?>
     
@@ -75,7 +77,7 @@ if($_SESSION['Usertype']== 'pharmaceuticalcompany'){
                             <?php foreach($row as $data){ ?>
                             <td><?php echo $data ?></td>
                             <?php } ?> 
-                            <?php if($_SESSION['Usertype'] == "pharmaceuticalcompany"){ ?>
+                            <?php if($_SESSION['Usertype'] == "pharmaceuticalcompany" || $_SESSION['Usertype'] == "admin"){ ?>
                                 <td class="action"><a href='/App/update/edit_drug.php?TradeName=<?php echo $row["TradeName"]?>'>Edit</a></td><?php }?>
                         </tr>
                     <?php } ?>

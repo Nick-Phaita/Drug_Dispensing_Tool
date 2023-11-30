@@ -79,7 +79,7 @@ if($_SERVER["REQUEST_METHOD"]== "POST"){
                     
                 ?>
                 <select name="PharmacyID" id="PharmacyID">
-                    <option value="<?php echo $PharmacyID?>" selected><?php echo $PharmacyID?></option>
+                    <option value="<?php echo $PharmacyID?>" selected hidden><?php echo $PharmacyID?></option>
                     <?php
                         // use a while loop to fetch data
                         // from the $all_categories variable

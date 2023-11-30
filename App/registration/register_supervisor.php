@@ -14,7 +14,11 @@ try{
     if($conn->query($sql) === TRUE) {
         echo 
         "<script>alert('Data inserted successfully')</script>";
-        header("Location: ../login(html).php ");
+        if($_SESSION['Usertype'] == "admin"){
+            header("Location: ../dashboards/admin_dashboard.php");
+        }else{
+            header("Location: ../login(html).php ");
+        }
     }else {
         echo "Error: ".$sql."<br>".$conn->error;
     }}

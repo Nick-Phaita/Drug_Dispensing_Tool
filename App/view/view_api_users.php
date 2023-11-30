@@ -8,7 +8,7 @@ session_start();
 //code to be modified also depending on the user viewing -> if statement around sql code
 
 
-$sqlretrieve = "SELECT * FROM Users";
+$sqlretrieve = "SELECT * FROM `api_user`";
 
 require_once("../pagination.php");
 
@@ -24,17 +24,33 @@ $result = mysqli_query($conn, $query);
     
 echo '<a class="back-to-dash" href="../dashboards/admin_dashboard.php">Back to Dashboard</a>';
 
+function generateToken($userId, $expirationTime) {
+    $secretKey = 'your_secret_key';
+
+    $payload = [
+        'user_id' => $userId,
+        'exp' => $expirationTime,
+    ];
+
+    $token = base64_encode(json_encode($payload));
+
+    $signature = hash_hmac('sha256', $token, $secretKey);
+    $token = $token . '.' . $signature;
+
+    return $token;
+}
+
     ?>
     
     <!DOCTYPE html>
     <html>
     <head>
-        <title>Users Table</title>
+        <title>API Users Table</title>
         <link rel="stylesheet" href="../styles/view.css">
         <link rel="stylesheet" href="../styles/style.css">
     </head>
     <body>
-        <h1>Users </h1>
+        <h1>API Users </h1>
         <hr>
 
         <?php if($result->num_rows > 0){?>
@@ -59,9 +75,14 @@ echo '<a class="back-to-dash" href="../dashboards/admin_dashboard.php">Back to D
                         <tr>
                             <?php foreach($row as $data){ ?>
                             <td><?php echo $data ?></td>
-                            <?php } ?> 
-                            <?php if($_SESSION['Usertype'] == "pharmaceuticalcompany" || $_SESSION['Usertype'] == "admin"){ ?>
-                                <td class="action"><a href='/App/update/edit_user.php?Username=<?php echo $row["Username"]?>'>Edit</a></td><?php }?>
+                            <?php } 
+                            $userId = $row['user_id'];
+                            $expirationTime = time() + 300;
+                            $userKey = generateToken($userId, $expirationTime);
+                            ?>
+                            
+                            <td ><button class="btn" onclick="return alert('The user\'s key is <?php echo $userKey?> valid for 5 minutes.')">Generate User Key</button></td>
+
                         </tr>
                     <?php } ?>
 
@@ -75,7 +96,7 @@ echo '<a class="back-to-dash" href="../dashboards/admin_dashboard.php">Back to D
             //display the link of the pages in URL  
         
             for($page = 1; $page<= $number_of_page; $page++) {  
-            echo '<a class="page" href = "view_users.php?page=' . $page . '">' . $page . ' </a> ';  
+            echo '<a class="page" href = "view_api_users.php?page=' . $page . '">' . $page . ' </a> ';  
         
             }  
     

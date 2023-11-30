@@ -4,8 +4,15 @@ session_start();
 $usernameOld = $usernameNew = "";
 $usertype = "";
 $password = "";
+$editedByAdmin = false;
 
-$usernameOld = $_SESSION["Username"];
+if(isset($_GET['Username']) && $_SESSION['Usertype'] == 'admin'){
+    $usernameOld = $_GET['Username'];
+    $editedByAdmin = true;
+}else{
+    $usernameOld = $_SESSION["Username"];
+}
+
 
 $sql = "SELECT * FROM Users WHERE Username = '$usernameOld'";
 $result = mysqli_query($conn, $sql);
@@ -20,42 +27,61 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $usertype = $_POST["Usertype"];
     $password = $_POST["Password"];
 
-    
 
     if($usertype == "supervisor"){
         $sql="UPDATE Users SET Username='$usernameNew',Usertype='$usertype',
         Password='$password' WHERE Username='$usernameOld'";
         $result1 = mysqli_query($conn, $sql);
-        $_SESSION['Username'] = $usernameNew;
-        header("Location: ../dashboards/supervisor_dashboard.php");
+        if($editedByAdmin == false){
+            $_SESSION['Username'] = $usernameNew;
+            header("Location: ../dashboards/supervisor_dashboard.php");
+        }else{
+            header("Location: ../dashboards/admin_dashboard.php");
+        }  
     }
     if($usertype == "patient"){
         $sql="UPDATE Users SET Username='$usernameNew',Usertype='$usertype',
         Password='$password' WHERE Username='$usernameOld'";
         $result1 = mysqli_query($conn, $sql);
-        $_SESSION['Username'] = $usernameNew;
-        header("Location: ../dashboards/patient_dashboard.php");
+        if($editedByAdmin == false){
+            $_SESSION['Username'] = $usernameNew;
+            header("Location: ../dashboards/patient_dashboard.php");
+        }else{
+            header("Location: ../dashboards/admin_dashboard.php");
+        } 
     }
     if($usertype == "doctor"){
         $sql="UPDATE Users SET Username='$usernameNew',Usertype='$usertype',
         Password='$password' WHERE Username='$usernameOld'";
         $result1 = mysqli_query($conn, $sql);
-        $_SESSION['Username'] = $usernameNew;
-        header("Location: ../dashboards/doctor_dashboard.php");
+        if($editedByAdmin == false){
+            $_SESSION['Username'] = $usernameNew;
+            header("Location: ../dashboards/doctor_dashboard.php");
+        }else{
+            header("Location: ../dashboards/admin_dashboard.php");
+        } 
     }
     if($usertype == "pharmacist"){
         $sql="UPDATE Users SET Username='$usernameNew',Usertype='$usertype',
         Password='$password' WHERE Username='$usernameOld'";
         $result1 = mysqli_query($conn, $sql);
-        $_SESSION['Username'] = $usernameNew;
-        header("Location: ../dashboards/pharmacist_dashboard.php");
+        if($editedByAdmin == false){
+            $_SESSION['Username'] = $usernameNew;
+            header("Location: ../dashboards/pharmacist_dashboard.php");
+        }else{
+            header("Location: ../dashboards/admin_dashboard.php");
+        } ;
     }
     if($usertype == "pharmaceuticalcompany"){
         $sql="UPDATE Users SET Username='$usernameNew',Usertype='$usertype',
         Password='$password' WHERE Username='$usernameOld'";
         $result1 = mysqli_query($conn, $sql);
-        $_SESSION['Username'] = $usernameNew;
-        header("Location: ../dashboards/pharmaco_dashboard.php");
+        if($editedByAdmin == false){
+            $_SESSION['Username'] = $usernameNew;
+            header("Location: ../dashboards/pharmaco_dashboard.php");
+        }else{
+            header("Location: ../dashboards/admin_dashboard.php");
+        } 
     }
     if($usertype == "admin"){
         $sql="UPDATE Users SET Username='$usernameNew',Usertype='$usertype',

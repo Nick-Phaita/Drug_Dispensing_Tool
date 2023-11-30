@@ -1,4 +1,5 @@
 <?php
+require_once("../connection.php");
 session_start();
 ?>
 
@@ -35,17 +36,33 @@ session_start();
 
         <div class="field">
         <label for="CompanyID">Company ID:</label><br>
-        <input type="text" name="CompanyID" id="CompanyID" value="<?php echo $_SESSION['CompanyID']?>" readonly required><br>
+        <input type="text" name="CompanyID" id="CompanyID"<?php if($_SESSION['Usertype'] == 'pharmaceuticalcompany'){?> value="<?php echo $_SESSION['CompanyID'];?>"  readonly<?php }?> required><br>
         </div>
 
         <div class="field">
         <label for="Category">Category</label>
-        <select name="Category" id="Category">
-            <option value="" selected hidden>Select the drug</option>
-            <option value="Anasthetic">Anasthetic</option>
-            <option value="Narcotics">Narcotics</option>
-            <option value="Painkillers">Painkillers</option>
-        </select>
+        <?php 
+            $sql = "SELECT cname FROM dcategory";
+            $result = $conn-> query($sql);    
+            ?>
+            <select name="Category" id="Category">
+            <option value="" selected hidden>Select the category</option>
+                        <?php
+                            while ($category = mysqli_fetch_array(
+                                    $result,MYSQLI_ASSOC)):;
+                        ?>
+                            <option value="<?php echo $category['cname'];
+                                // The value we usually set is the primary key
+                            ?>">
+                                <?php echo $category['cname'];
+                                    // To show the category name to the user
+                                ?>
+                            </option>
+                        <?php
+                            endwhile;
+                            // While loop must be terminated
+                        ?>
+                    </select><br>
         </div>
         
 
@@ -64,7 +81,7 @@ session_start();
 </html>
 
 <?php
-require_once("../connection.php");
+//require_once("../connection.php");
 
 try{
     if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -87,8 +104,12 @@ try{
 if($conn->query($sql) === TRUE) {
     echo 
     "<script>alert('Data inserted successfully')</script>";
+    if($_SESSION['Usertype'] == 'admin'){
+        header("Location: ../dashboards/admin_dashboard.php");
+    }else{
+        header("Location: ../dashboards/pharmaco_dashboard.php");
+    }
     
-    header("Location: ../dashboards/pharmaco_dashboard.php");
 
 }else {
     echo "Error: ".$sql."<br>".$conn->error;

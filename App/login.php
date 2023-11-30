@@ -40,8 +40,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 $_SESSION['Names'] = $row['Names'];
                 $_SESSION['SSN'] = $row['SSN'];
                 $_SESSION['Username'] = $row['Username'];
+                $username = $row['Username'];
                 $_SESSION['sccmmsg']="Patient logged successfully";
+                $currentDateTime = date("Y-m-d H:i:s");
+                $_SESSION['now'] = $currentDateTime;
+                $sql = "UPDATE Patients SET lastlogin = '$currentDateTime' WHERE Username='$username'";
+                $result = mysqli_query($conn, $sql);
                 header("Location: dashboards/patient_dashboard.php");
+                
             }
             if($usertype == "doctor"){
                 $sql = "SELECT * FROM Doctors WHERE Username='$username'";
