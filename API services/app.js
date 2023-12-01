@@ -208,7 +208,7 @@ app.get("/drug/category/:category", async (req,res)=>{
   const drugs=await  drug.findAll({ where: { dcategory: category }});
 
   if(drugs.length==0){
-    res.status(400).json({ error: "category doesnt exist" });
+    res.status(400).json({ error: "category doesn't exist" });
   }else{
     res.json(drugs);
   }
